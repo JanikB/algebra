@@ -1,0 +1,107 @@
+\chapter{Gruppen}
+
+\section{Gruppen und Untergruppen}
+
+\subsection{Definition} Eine Gruppe\index{Gruppe} ist ein geordnetes Paar $(G, \cdot)$, wobei $G$ eine Menge ist und $\cdot : G \times G \to G$ eine meist infix (und manchmal gar nicht) notierte Abbildung mit folgenden Eigenschaften ist:
+	\begin{itemize}
+		\item[(A)]
+			$\forall a, b, c \in G : a(bc) = (ab)c$ \quad\quad \textit{"`assoziativ"'}
+		\item[(N)]
+			$\exists e \in G ~\forall a \in G : ae = a = ea$ \quad\quad \textit{"`neutrales Element"'}
+		\item[(I)]
+			$\forall a \in G ~\exists g \in G : ab = 1 = ba$ \quad\quad \textit{"`inverse Elemente"'}
+	\end{itemize}
+"`$\cdot$"' heißt Gruppenmultiplikation\index{Gruppe!Multiplikation} oder Gruppenverknüpfung\index{Gruppe!Verknüpfung}. Gilt zusätzlich
+	\begin{itemize}
+		\item[(K)] $\forall a,b \in G : ab = ba$
+	\end{itemize}
+so heißt $(G, \cdot)$ abelsch\index{Gruppe!abelsche} oder kommutativ\index{Gruppe!kommutative}.
+
+\subsection*{Anmerkung} Sind $e, e' \in G$ neutral, so $e = ee' = e'$. Daher gibt es genau ein neutrales Element, für welches man oft "`$1$"' schreibt.
+
+\subsection{Bemerkung}
+	\begin{enumerate}[label=(\alph*)]
+		\item
+			Sei $(G, \cdot)$ eine Gruppe und $a \in G$. Seien $b, b'$ invers zu $a$. Dann
+			$$b \GRPeqn b \cdot 1 \GRPeqi b(ab') \GRPeqa (ba)b' \GRPeqi 1 \cdot b \GRPeqn b'.$$
+			Daher gibt es zu jedem $a \in G$ genau ein inverses Element in $G$, welches wir mit $a^\mo$ bezeichnen.
+			
+		\item
+			(N) und (I) kann man wie folgt schreiben:
+			\begin{itemize}
+				\item[(N)] $\forall a \in G : a1 = a = 1a$
+				\item[(I)] $\forall a \in G : aa^\mo = 1 = a^\mo a$
+			\end{itemize}
+			
+		\item
+			Oft: "`Sei $G$ eine Gruppe"', statt: "`Sei $(G, \cdot)$ eine Gruppe."'
+		
+		\item
+			Sei $G$ eine Gruppe, $n \in \N_0$ und $a_1, ..., a_n \in G$. Dann definiert man $\prod_{i=1}^n a_i := a_1 \cdot ... \cdot a_n$ als 1 für $n = 0$ und indem man $a_1 \cdot ... \cdot a_n$ sinnvoll mit Klammern versieht, sonst. Dies hängt nicht von der Wahl der Klammerung da, wie (A) für $n = 3$ besagt. Für $n > 3$ siehe \LAref{2.1.6} oder mache es als Übung per Induktion. Falls $G$ additiv geschrieben ist, schreibt man $\sum_{i=1}^n a_i$, statt $\prod_{i=1}^n a_i$.
+			
+		\item
+			Sei $G$ eine Gruppe, $n \in \Z$ und $a \in G$. Dann definiert man
+			$$a^n := \begin{cases}\prod_{i=1}^n a, & \text{für} ~ n \geq 0, \\ \prod_{i=1}^n (a^\mo), & \text{für} ~ n \leq 0.\end{cases}$$
+			Fall $G$ additiv geschrieben ist, schreibt man $na$, statt $a^n$.
+	\end{enumerate}
+
+\subsection{Definition} Ist $(G, \cdot)$ eine Gruppe, so nennt man $\#G \in \N_0 \cup \{\infty\}$ die Ordnung\index{Ordnung} von $(G,\cdot)$.
+
+\subsection{Beispiel}
+	\begin{enumerate}[label=(\alph*)]
+		\item
+			Für jede Menge $M$ bildet die Menge $S_M := \{f \mid f: M \to M ~ \text{bijektiv}\}$ mit der durch $fg := f \circ g$ $(f,g \in S_M)$ gegebenen Multiplikation eine Gruppe. Man nennt sie die symmetrische Gruppe\index{Gruppe!symmetrische} auf M. Das neutrale Element von $S_M$ ist die Identität auf $M$ und das zu einem $f \in S_M$ inverse Element ist die Umkehrfunktion von $f$, wodurch die Notation $f^\mo$ nicht zweideutig ist.
+		
+			Für $n \in \N_0$ ist $S_n := S_{\{1,...,n\}}$ eine Gruppe der Ordnung $n! := \prod_{i=1}^n i$ "`$n$ Fakultät\index{Fakultät}"'. Für $n \geq 3$ ist die nicht abelsch, dann die Transpositionen $\tau_{1,2}$ und $\tau_{2,3}$ konvertieren nicht, d.h. $\tau_{1,2}\tau_{2,3} \neq \tau_{2,3}\tau_{1,2}$. In der Tat: $(\tau_{1,2}\tau_{2,3})(1) = \tau_{1,2}(1) = 2$ und $(\tau_{2,3}\tau_{1,2})(1) = \tau_{2,3}(2) = 3$.
+		
+		\item
+			Für jeden Vektorraum $V$ ist die Menge $\Aut(V) := \{f \mid f : V \to V ~\text{linear und bijektiv}\}$\index{Automorphismus!Vektorraum-} mit der Hintereinanderschaltung als Multiplikation eine Gruppe.
+			
+		\item
+			Ist $R$ ein kommutativer Ring (z.\ B. $R = \Z$), so ist $\GL_n(R) := \{A \in R^\ntn \mid A ~\text{invertierbar}\} = \{ A \in R^\ntn \mid \det A \in R^\times \}$\index{Gruppe!General Linear} eine Gruppe.
+	\end{enumerate}
+	
+\subsection{Proposition} Sei $G$ eine Gruppe und $a,b \in G$.
+\begin{enumerate}[label=(\alph*)]
+		\item
+			$ab = 1 \iff a = b^\mo \iff b = a^\mo$
+		\item
+			$\left(a^\mo\right)^\mo = a$
+		\item
+			$(ab)^\mo = b^\mo a^\mo$
+\end{enumerate}
+
+\bew
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Gilt $ab = 1$, so $a \GRPeqn a1 \GRPeqi a(bb^\mo) \GRPeqa (ab) b^\mo = 1b \GRPeqn b^\mo$. Gilt $a = b^\mo$, so $b \GRPeqn 1b \GRPeqi (a^\mo a)b \GRPeqa a^\mo(ab) = a^\mo(b^\mo b) \GRPeqi a^\mo 1 \GRPeqn a^\mo$. Gilt $b = a^\mo$, so $ab = 1$.
+		
+	\item
+		Aus $a a^\mo \GRPeqi 1$ folgt mit (a) $\left( a^\mo \right)^\mo = a$.
+		
+	\item
+		Aus $(ab)(b^\mo a^\mo) \GRPeqa a(b(b^\mo a^\mo)) \GRPeqa a((b b^\mo)a^\mo) \GRPeqi a(1a^\mo) \GRPeqn aa^\mo \GRPeqi 1$ folgt mit (a) $(ab)^\mo = b^\mo a^\mo$. \qed		
+\end{enumerate}
+
+\subsection{Definition} Seien $(G, \cdot_G)$ und $(H, \cdot_H)$ Gruppen. Dann heißt $(H, \cdot_H)$ eine Untergruppe\index{Gruppe!Untergruppe} von $(G, \cdot_G)$, wenn $H \subseteq G$ und $\forall a, b \in H : a \cdot_H b = a \cdot_G b$.
+
+\subsection{Proposition} Sei $(G, \cdot_G$ eine Gruppe und $H$ eine Menge. Dann ist $H$ genau dann Trägermenge\index{Trägermenge} einer Untergruppe von $(G, \cdot_g)$, wenn $H \subseteq G$, $1_S \in H$, $\forall a,b \in H : a \cdot_S b \in H$ und $\forall a \in H : a^ \mo \in H$.
+
+In diesem Fall gibt es genau eine Abbildung $\cdot_H : H \times H \to H$ derart, dass $(H, \cdot_H)$ eine Untergruppe von $(G, \cdot_G)$ ist. Es gilt dann $1_H = 1_G$, $\forall a,b \in H : a \cdot_H b = a \cdot_G b$ und $a^\mo = a^\mo$ (je in $G$ und $H$ gebildet).
+
+\bew Klar oder vgl.\ LA § 2. \qed
+
+\subsection{Bemerkung}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Ist $(H, \cdot_H)$ Untergruppe von $(G, \cdot_G)$, so schreibt man meist $\cdot$ statt $\cdot_H$. Oft erwähnt man $\cdot_H$ gar nicht mehr und schreibt einfach "`$H$ ist Untergruppe von $G$"' oder $H \leq G$.
+		
+	\item
+		Untergruppen abelscher Gruppen sind abelsch.
+\end{enumerate}
+
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Für $n \in \N_0$ ist $A_n := \{\sigma \in S_n \mid \sgn \sigma = 1\}$ eine Untergruppe von $S_n$, die man alternierende Gruppe \index{Gruppe!alternierende} nennt. \LAref{§ 9.1}
+\end{enumerate}

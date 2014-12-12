@@ -1,0 +1,91 @@
+%-------------------------Packages---------------------------------%
+
+\documentclass[11pt, a4paper, titlepage]{scrbook}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{enumitem}
+\usepackage{extarrows}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{stmaryrd}
+\usepackage{calrsfs}
+\usepackage{wasysym}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{hyperref}
+
+%----------------------------Titlesec-----------------------------------%
+
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\Huge\bfseries}{§~\thechapter}{.5em}{}[]
+\titleformat{\section}[block]{\hrule\bigskip\normalfont\Large\bfseries}{§~\thesection}{.5em}{}[\bigskip\hrule]
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{.5em}{}[]
+
+%----------------------------Definitions-------------------------------%
+
+% Mengen
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+
+% Operatoren
+\DeclareMathOperator\Aut{Aut}
+\DeclareMathOperator\GL{GL}
+\DeclareMathOperator\sgn{sgn}
+
+% Befehle zu Gruppen
+\newcommand\GRPeqn{\stackrel{(N)}{=}}
+\newcommand\GRPeqi{\stackrel{(I)}{=}}
+\newcommand\GRPeqa{\stackrel{(A)}{=}}
+
+% Verweise
+\newcommand\LAref[1]{[$\to$ LA #1]}
+
+% Beweise
+\newcommand\bew{\textbf{Beweis:}~}
+
+% Vereinfachungen
+\newcommand\mo{{-1}}
+\newcommand\ntn{{n \times n}}
+
+% Sonstige
+\setlength{\parindent}{0pt}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%---------------------------Document--------------------------------------%
+
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+		\textsc{\LARGE Universität Konstanz}\\[1.5cm]
+		{\large Skriptum zur Vorlesung}\\[0.5cm]
+		\HRule \\[0.4cm]
+		{\huge \bfseries Einführung in die Algebra \\[0.4cm]}
+		\HRule \\[.5cm]
+		{\small Private Mitschrift}\\[1.5cm]
+		{\large \emph{gelesen von:} \hfill Prof. Dr. Markus Schweighofer}\\
+		\large\vfill
+		{\large Wintersemester 2014/15}\\
+		{\large Stand vom \today}	
+	\end{center}
+\end{titlepage}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\input{lecture/lecture01.tex}
+
+\chapter*{Anhang}
+\printindex
+
+\end{document}

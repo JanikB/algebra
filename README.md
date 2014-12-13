@@ -11,6 +11,7 @@ Ziel dieses Projekts ist es, mit überschaubarem Arbeitsaufwand für jeden einze
  * Als Ausgangspunkt verwendet man die aktuelle Version des Skriptes und fügt an die passende Stelle seinen Code ein. Gegebenenfalls kann man die Input-Befehle entfernen und bekommt dann die korrekte Nummerierung der Abschnitte nach dem in die gesamte Version.
  * Es genügt, den eigenen Code einzureichen, solange dieser kompiliert. Das Zusammenfügen übernimmt der/die Editor/en.
  * Dies kann per Mail an Robert Seidel (kanonische Uni-Mailadresse) oder per Push Request an dieses Repository gesendet werden.
+ * TeXen ist wichtig - das Skript gegenzulesen aber auch. Dies sollte erst gemacht werden, wenn die Vorlesung ins Skript eingefügt wurde. Eventuelle Fehler können dann direkt an Robert Seidel (kanonische Uni-Mailadresse) oder per Push Request mitgeteilt werden.
 
 ## GIT und diese Seite
  * Die aktuelle Version des Skriptes wird auf dieser Seite veröffentlicht.

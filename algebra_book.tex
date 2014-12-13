@@ -1,6 +1,6 @@
 %-------------------------Packages---------------------------------%
 
-\documentclass[11pt, a4paper, titlepage]{scrbook}
+\documentclass[11pt, a4paper, titlepage, bibliography=totoc]{scrbook}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -85,7 +85,12 @@
 
 \input{lecture/lecture01.tex}
 
-\chapter*{Anhang}
+\nocite{*}
+\bibliographystyle{plaindin}
+\bibliography{algebra_book.bib}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\indexname}
 \printindex
 
 \end{document}

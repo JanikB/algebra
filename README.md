@@ -8,9 +8,9 @@ Ziel dieses Projekts ist es, mit überschaubarem Arbeitsaufwand für jeden einze
 
 ## Beiträge
  * Einzureichen sind (mindestens) ein `tex`-File und ein kompiliertes `pdf`-File. :-)
- * Als Ausgangspunkt verwendet man die aktuelle Version des Skriptes und fügt an die passende Stelle seinen Code ein. Gegebenenfalls kann man die Input-Befehle entfernen und bekommt dann die korrekte Nummerierung der Abschnitte nach dem in die gesamte Version.
- * Es genügt, den eigenen Code einzureichen, solange dieser kompiliert. Das Zusammenfügen übernimmt der/die Editor/en.
- * Dies kann per Mail an Robert Seidel (kanonische Uni-Mailadresse) oder per Push Request an dieses Repository gesendet werden.
+ * Als Ausgangspunkt verwendet man das Template aus `template.tex` und fügt dort seinen Code ein. Falls nötig, kann natürlich auch die Präambel verändert werden. Die Nummerierung der Abschnitte wird im Template noch nicht korrekt sein, das macht aber nichts.
+ * Die eingereite Datei sollte kompilieren. Das Zusammenfügen der einzelnen Vorlesungen übernimmt der/die Editor/en.
+ * Die fertige Vorlesung kann per Mail an Robert Seidel (kanonische Uni-Mailadresse) oder per Push Request an dieses Repository gesendet werden.
  * TeXen ist wichtig - das Skript gegenzulesen aber auch. Dies sollte erst gemacht werden, wenn die Vorlesung ins Skript eingefügt wurde. Eventuelle Fehler können dann direkt an Robert Seidel (kanonische Uni-Mailadresse) oder per Push Request mitgeteilt werden.
 
 ## GIT und diese Seite

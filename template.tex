@@ -1,0 +1,76 @@
+%-------------------------Packages---------------------------------%
+
+\documentclass[11pt, a4paper, titlepage, bibliography=totoc]{scrbook}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{enumitem}
+\usepackage{extarrows}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{stmaryrd}
+\usepackage{calrsfs}
+\usepackage{wasysym}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\usepackage[most]{tcolorbox}
+\usepackage{titlesec}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage[hidelinks]{hyperref}
+
+%----------------------------Titlesec-----------------------------------%
+
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\normalfont\Huge\bfseries}{§~\thechapter}{.5em}{}[]
+\titleformat{\section}[block]{\hrule\bigskip\normalfont\Large\bfseries}{§~\thesection}{.5em}{}[\bigskip\hrule]
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{.5em}{}[]
+
+%----------------------------Definitions-------------------------------%
+
+% Mengen
+\newcommand\N{\mathbb N}
+\newcommand\Z{\mathbb Z}
+
+% Operatoren
+\DeclareMathOperator\Aut{Aut}
+\DeclareMathOperator\GL{GL}
+\DeclareMathOperator\sgn{sgn}
+
+% Befehle zu Gruppen
+\newcommand\GRPeqn{\stackrel{(N)}{=}}
+\newcommand\GRPeqi{\stackrel{(I)}{=}}
+\newcommand\GRPeqa{\stackrel{(A)}{=}}
+
+% Verweise
+\newcommand\LAref[1]{[$\to$ LA #1]}
+
+% Beweise
+\newcommand\bew{\textbf{Beweis:}~}
+
+% Vereinfachungen
+\newcommand\mo{{-1}}
+\newcommand\ntn{{n \times n}}
+
+% Sonstige
+\setlength{\parindent}{0pt}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%---------------------------Document--------------------------------------%
+
+\begin{document}
+
+\texttt{Hier wird von uns der Inhalt der vorherigen Vorlesungen eingefügt. Diese Zeilen einfach stehen lassen.}
+
+\texttt{Die 'Anleitung' findet man unter \url{https://github.com/robsei/algebra/}. Dort gibt es unter 'lectures' auch Beispiele von bereits geTeXten Vorlesungen. Diese Datei an Robert Seidel (kanonische Uni-Mailadresse) schicken.}
+
+\texttt{Hinweis: Die Nummerierung der Sätze, Defnitionen usw. wird in diesem Dokument noch nicht stimmen. Das wird sich dann in der gesamten Version mit den zuvor einzufügenden Abschnitten korrigieren.}
+
+\subsection{Satz} \textsl{Hier gehts los ...}
+
+\end{document}

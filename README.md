@@ -32,3 +32,7 @@ Richtlinien für die Erzeugung des `LaTeX`-Codes.
 
 ## Beweise
  * Ein Beweis wird mit dem Befehl `\bew` begonnen und mit `\qed` beendet.
+
+## thm-Umgebung
+ * Um den Quellcode möglichst einfach zu halten, wird auf den Einsatz der `proof`- und `thm`-Umgebungen verzichtet und die Nummern im Skript durch `\subsection` gegliedert.
+ * Für größere Projekte mag dies nicht sinnvoll erscheinen - hier gilt aber: KISS (Keep it simple, stupid) ...

@@ -25,14 +25,16 @@ Richtlinien für die Erzeugung des `LaTeX`-Codes.
  * Die Zeichen für Mengen sind im Header mittels `\newcommand` einzuführen.
  * Die Zeichen für Operatoren sind im Header mittels `\DeclareMathOperator` einzuführen.
  * Bei mehreren aufeinanderfolgenden Quantoren wie `\forall` und `\exists` verwendet man `~` als Platzhalter. Ebenso vor oder nach `\text`-Elementen im Mathematikmodus.
+ * Die Einschränkung einer Funktion auf einen bestimmten Wertebereich macht man mit `|_`.
 
 ## Verweise und Index
  * Bei Verweisen auf das LA-Skript, verwendet man den Befehl `\LAref`.
  * Alle wichtigen Begriffe (also insbesondere Definitionen und Sätze mit Namen) sind mit `\index` zu indexieren.
+ * Interne Verweise auf macht man so: Man kennzeichnet den Satz, den man referenzieren will mit `\label{fixed:X.X.X}` und referenziert mit `\ref{fixed:X.X.X}`. Dieses Vorgehen ist unüblich, da man mit den `label`s die manuelle Anpassung der Nummerierung verhindern will. Hier (KISS - Keep it simple, stupid) verwenden wir einfach die festen Nummern aus der Vorlesung und bemerken dies durch den Präfix `fixed`.
 
 ## Beweise
  * Ein Beweis wird mit dem Befehl `\bew` begonnen und mit `\qed` beendet.
 
 ## thm-Umgebung
  * Um den Quellcode möglichst einfach zu halten, wird auf den Einsatz der `proof`- und `thm`-Umgebungen verzichtet und die Nummern im Skript durch `\subsection` gegliedert.
- * Für größere Projekte mag dies nicht sinnvoll erscheinen - hier gilt aber: KISS (Keep it simple, stupid) ...
+ * Für größere Projekte mag dies nicht sinnvoll erscheinen - hier gilt aber: KISS (siehe oben) ...

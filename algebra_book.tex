@@ -16,13 +16,15 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{mdframed}
-\usepackage[most]{tcolorbox}
+\usepackage{tcolorbox}
 \usepackage{titlesec}
 
 \usepackage{makeidx}
 \makeindex
 
 \usepackage[hidelinks]{hyperref}
+
+\usepackage{tikz}
 
 %----------------------------Titlesec-----------------------------------%
 
@@ -36,19 +38,70 @@
 % Mengen
 \newcommand\N{\mathbb N}
 \newcommand\Z{\mathbb Z}
+\newcommand\Q{\mathbb Q}
+\newcommand\R{\mathbb R}
+\newcommand\C{\mathbb C}
+\renewcommand\P{\mathbb P}
+\newcommand\p{\mathfrak p}
+\newcommand\m{\mathfrak m}
+\newcommand\q{\mathfrak q}
+\newcommand\Odm{
+	\begin{tikzpicture}[baseline]
+		\draw[fill=black] (1.6ex,0) -- (1.6ex,1.6ex) -- (0,1.6ex) -- cycle;
+	\end{tikzpicture}
+	~
+}
+\newcommand\Udm{
+	\begin{tikzpicture}[baseline]
+		\draw[fill=black] (0,0) -- (0,1.6ex) -- (1.6ex,0) -- cycle;
+	\end{tikzpicture}
+	~
+}
+\newcommand\odm{
+	\begin{tikzpicture}[baseline]
+		\draw (1.6ex,0) -- (1.6ex,1.6ex) -- (0,1.6ex) -- cycle;
+	\end{tikzpicture}
+	~
+}
+\newcommand\udm{
+	\begin{tikzpicture}[baseline]
+		\draw (0,0) -- (0,1.6ex) -- (1.6ex,0) -- cycle;
+	\end{tikzpicture}
+	~
+}
 
 % Operatoren
 \DeclareMathOperator\Aut{Aut}
+\DeclareMathOperator\End{End}
 \DeclareMathOperator\GL{GL}
 \DeclareMathOperator\sgn{sgn}
+\DeclareMathOperator\im{im}
+\DeclareMathOperator\spn{span}
+\DeclareMathOperator\irr{irr}
+\DeclareMathOperator\id{id}
+\DeclareMathOperator\qf{qf}
+\DeclareMathOperator\supp{supp}
+
+% Relationen
+\newcommand{\eqhat}{\mathrel{\widehat{=}}}
+\newcommand{\eqtilde}{\mathrel{\widetilde{=}}}
 
 % Befehle zu Gruppen
 \newcommand\GRPeqn{\stackrel{(N)}{=}}
 \newcommand\GRPeqi{\stackrel{(I)}{=}}
 \newcommand\GRPeqa{\stackrel{(A)}{=}}
 
+% Befehle zu Abbildungen
+\newcommand\MAPmono{\lhook\joinrel\rightarrow}
+\newcommand\MAPepi{\twoheadrightarrow}
+\newcommand\MAPiso{\overset{\cong}{\rightarrow}}
+\newcommand\MAPlongmono{\lhook\joinrel\longrightarrow}
+\newcommand\MAPlongepi{\relbar\joinrel\twoheadrightarrow}
+\newcommand\MAPlongiso{\overset{\cong}{\longrightarrow}}
+
 % Verweise
 \newcommand\LAref[1]{[$\to$ LA #1]}
+\newcommand\ALref[1]{[$\to$ #1]}
 
 % Beweise
 \newcommand\bew{\textbf{Beweis:}~}
@@ -57,9 +110,32 @@
 \newcommand\mo{{-1}}
 \newcommand\ntn{{n \times n}}
 
+% Verschiebe overline nach oldoverline.
+% Fordere für overline mindestens Höhe eines 'A' Abstand zur Grundlinie.
+\let\oldoverline\overline
+\renewcommand\overline[1]{\oldoverline{\vphantom{A} #1}}
+
+% Benutze immer overline.
+\renewcommand\bar\overline
+% Benutze immer widehat.
+\renewcommand\hat\widehat
+% Benutze immer varphi statt phi und varepslion statt epsilon.
+\renewcommand\phi\varphi
+\renewcommand\epsilon\varepsilon
+
 % Sonstige
 \setlength{\parindent}{0pt}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand\i{\mathring\imath}
+\newcommand\numberfix[3]{
+	\setcounter{chapter}{#1}
+	\setcounter{section}{#2}
+	\setcounter{subsection}{#3}
+	
+	\rule{\textwidth}{1pt}
+	\texttt{Hier fehlt noch etwas ...}\\
+	\rule{\textwidth}{1pt}
+}
 
 %---------------------------Document--------------------------------------%
 
@@ -86,6 +162,17 @@
 \tableofcontents
 
 \input{lecture/lecture01.tex}
+
+\numberfix{2}{1}{3}
+\input{lecture/lecture07.tex}
+\input{lecture/lecture08.tex}
+
+\numberfix{2}{3}{5}
+\input{lecture/lecture10.tex}
+\input{lecture/lecture11.tex}
+
+\numberfix{3}{0}{0}
+\input{lecture/lecture19.tex}
 
 \nocite{*}
 \bibliographystyle{plaindin}

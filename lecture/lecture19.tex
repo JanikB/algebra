@@ -1,0 +1,83 @@
+\chapter{Körper \small\LAref{§ 4}}
+
+\section{Endliche und algebraische Körpererweiterungen}
+
+\subsection{Definition} Sei $L | K$ eine Körpererweiterung \ALref{\ref{fixed:2.3.11}}. Die Dimension $[L:K] := \dim_K L \in N \cup \{\infty\}$ des $K$-Vektorraums $L$ \LAref{§ 6.1} nennt man den (Körper-)Grad\index{Grad!einer Körpererweiterung}\index{Körpererweiterung!Grad} von $L$ über $K$ (nicht zu verwechseln mit dem Index aus \ref{fixed:1.3.19}!). Ist $[L:K] < \infty$ ($[L:K] = \infty$), so nennt man L endlich (unendlich) über $K$ und $L|K$ eine endliche\index{Körpererweiterung!endliche} (unendliche\index{Körpererweiterung!unendliche}) Körpererweiterung.
+
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$[K:K] = 1$ für jeden Körper $K$.
+		
+	\item
+		$[K(X):K] = \infty$ für jeden Körper $K$.
+		
+	\item
+		$[\C:\R] = 2$
+\end{enumerate}
+
+\subsection{Proposition} Sei $L|K$ eine Körpererweiterung von $V$ ein $L$-Vektorraum (und damit auch ein $K$-Vektorraum). Sei $A$ eine Basis des $K$-Vektorraums $L$ und $B$ eine Basis des $L$-Vektorraums $V$. Dann ist $A \times B \to AB := \{ab \mid a \in A b \in B\},~(a,b) \mapsto ab$ bijektiv und $AB$ eine Basis des $K$-Vektorraums $V$.
+
+\proof Zu zeigen:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$\spn_K AB = V$
+		
+	\item
+		Für paarweise verschiedene $a_1,...,a_m \in A$ und paarweise verschiedene $b_1,...,b_n \in B$ sind $a_ 1b_1,...,a_1 b_n,...,a_m b_1,...,a_m b_n$ linear unabhängig.
+\end{enumerate}
+
+Zu (a). Für jedes $\lambda \in L$ und $b \in B$ gilt $\lambda \in \spn_K A$ und daher $\lambda b \in \spn_K Ab \subseteq \spn_K AB$. Daraus folgt $V = \spn_L B \subseteq \spn_K AB \subseteq V$.
+
+Zu (b). Seien $\lambda_{ij} \in K$ ($1 \leq i \leq m, 1 \leq j \leq n$) mit $\sum_{i=1}^m  \sum_{j=1}^n \lambda_{ij} a_i b_j = 0$. Dann $\sum_{j=1}^n \left( \sum_{i=1}^m \lambda_{ij} a_i \right) b_j = 0$ und daher $\sum_{i=1}^m \lambda_{ij} a_i = 0$ für alle $j$, also $\lambda_{ij} = 0$ für alle $i,j$. \qed
+
+\subsection{Sprechweise} Ein Zwischenkörper\index{Körper!Zwischenkörper} einer Körpererweiterung $L|K$ ist ein Unterkörper von $L$, der $K$ enthält.
+
+\subsection{Korollar} Sei $F$ ein Zwischenkörper der Körpererweiterung $L|K$. Dann ist $L|K$ endlich genau dann, wenn $L|F$ und $F|K$ beide endlich sind, und in diesem Fall gilt die sogenannte "`Gradformel"'\index{Gradformel} $$[L:K] = [L:F][F:K].$$
+
+\subsection{Definition} Sei $L|K$ eine Körpererweiterung. Dann heißt $a \in L$ algebraisch\index{algebraisch!-es Element} über $K$, wenn es $f \in K[x]\setminus\{0\}$ gilt mit $f(a)=0$ [das heißt, wenn $a$ nicht algebraisch unabhängig über $K$ ist, \ALref{\ref{fixed:2.2.3(a)}}]. Es heißt $L|K$ algebraisch\index{algebraisch!-e Körpererweiterung}, wenn jedes Element von $L$ algebraisch über $K$ ist.
+
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$\sqrt{2}$ ist algebraisch über $\Q$, denn $\left(\sqrt{2}\right)^2-2 = 0$.
+		
+	\item
+		$\i$ und $\i+1$ sind algebraisch über $\Q$, denn $\i^2+1 = 0$ und $(\i+1)^2-2(\i+1)+2 = 0$.
+		
+	\item
+		$K \in K(X)$ ist nicht algebraisch über $K$. ($K$ ein Körper.)
+\end{enumerate}
+
+\subsection{Definition} Sei $L|K$ eine Körpererweiterung und $a \in L$ algebraisch über $K$. Dann ist der Kern von $K[X] \to L,~f \mapsto f(a)$ ein Ideal von $K[X]$, welches von einem eindeutig bestimmten normierten Polynom erzeugt wird \LAref{10.2.4}, dem sogenannten Minimalpolynom\index{Minimalpolynom}\index{Polynom!Minimal-} $\irr_K(a) \in K[X]$.
+
+\subsection{Proposition} Sei $L|K$ eine Körpererweiterung und $a \in L$ algebraisch über $K$. Dann sind für $f \in K[X]$ äquivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$f = \irr_K(a)$
+		
+	\item
+		$f$ ist \textit{das} normierte Polynom kleinsten Grades mit $f(a)=0$.
+		
+	\item
+		$f$ ist normiert und irreduzibel in $K[X]$ und es gilt $f(a)=0$.
+		
+	\item
+		$f$ ist das Minimalpolynom des $K$-Vektorraumendomorphismus $\lambda_a : L \to L,~b \mapsto ab$.
+\end{enumerate}
+
+\proof ~
+
+\underline{(a) $\Longrightarrow$ (b):} Klar
+
+\underline{(b) $\Longrightarrow$ (c):} Gelte (b). Zu zeigen ist $f$ irreduzibel. Es gilt $f \in K[X]^\times = K^\times$, da $f(a)=0$. Seien $g,h \in K[X]$ mit $f = gh$. Zu zeigen ist $g \in K^\times$ oder $h \in K^\times$. Wegen $g(a)h(a) = (gh)(a) = f(a) = 0$ gilt $g(a) = 0$ oder $h(a) = 0$. Dann gilt aber $\deg g \geq \deg f$ oder $\deg h \geq \deg f$ und daher $h \in K^\times$ oder $g \in K^\times$.
+
+\underline{(c) $\Longrightarrow$ (a):} Gelte (c). Wegen $f(a) = 0$ gilt dann $f \in (\irr_K(a))$\footnote{Korrektur: Hier fehlt doch was um die Klammern?}, das heißt, es gibt $g \in K[X]$ mit $f = g \irr_K(a) \in K^\times$. Letzteres ist unmöglich, also $g\in K^\times$ und sogar $g=1$, da $f$ und $\irr_K(a)$ beide normiert sind.
+
+\underline{(a) $\iff$ (d):} Es reicht zu zeigen, dass für alle $g \in K[X]$ gilt: $g(a) = 0 \iff g(\lambda_a) = 0$ \LAref{10.2.18}. Dies folgt aus $(g(\lambda_a))(b) = (g(a))b$ für alle $b \in L$. \qed
+
+\subsection{Proposition} Sei $L|K$ eine Körpererweiterung und $a \in L$ algebraisch über $K$. Dann ist $K[X]/(\irr_K(a))$ ein Körper und $K[X]/(\irr_K(a)) \to K[a],~\bar f \mapsto f(a)$ ein Isomorphismus. Insbesondere ist $K[a] = K(a)$ auch ein Körper und $\deg \irr_K(a) = [K(a):K]$.
+
+\proof Nach dem Isomorphiesatz für Ringe und für $K$-Vektorräume liefert der Einsetzungshomomorphismus $K[X] \MAPepi K[a],~f \mapsto f(a)$ den Ring - und $K$-Vektorraumisomorphismus $K[X]/(\irr_K(a)) \to K[a],~\bar f \mapsto f(a)$.
+
+Da $\irr_K(a)$ irreduzibel im Hauptidealring $K[X]$ ist, ist $K[X]/(\irr_K(a))$ nach \ref{fixed:2.4.9} (siehe auch \ref{fixed:2.4.10(b)}) ein Körper. Daher ist auch der dazu isomorphe Ring $K[a]$ ein Körper, das heißt $K[a] = K(a)$ \ALref{\ref{fixed:2.3.11(b)}}. Setzt man nun $d := \deg \irr_K(a)$, so bilden $\bar 1, \bar X, ..., \bar X^{d-1}$ offensichtlich eine Basis des $K$-Vektorraumes $K[X]/(\irr_K(a))$ und daher deren Bilder $1, a, ..., a^{d-1}$ eine Basis des $K$-Vektorraums $K[a] = K(a)$. Insbesondere ist $d = [K(a):K]$. \qed

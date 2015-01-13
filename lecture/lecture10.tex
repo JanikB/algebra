@@ -1,0 +1,74 @@
+\subsection{Satz} \label{fixed:2.3.6} Sei $A$ ein kommutativer Ring und $S \subseteq A$ eine multiplikative Menge, die keine Nullteiler von $A$ enthält. Dann gibt es einen kommutativen Oberring $B$ von $A$ mit $S \subseteq B^\times$ und $B = S^\mo A$.
+
+\proof Durch $(a,s) \sim (b,t) :\iff at = bs$ ($a,b \in A, s,t \in S$) wird eine Äquivalenzrelation $\sim$ auf $A \times S$ definiert. [Reflexiv und symmetrisch ist klar, transitiv: Seien $a,b,c \in A$ und $s,t,u \in S$ mit $(a,s) \sim (b,t) \sim (c,u)$. Dann $at=bs$ und $bu = ct$, also $atu = bsu = bus = cts$, das heißt $t(au-cs) = 0$ und daher $au = cs$, da $t \in S$ kein Nullteiler ist.] Der Leser zeigt als Übung, dass $+$ und $\cdot$ durch
+\begin{align*}
+	\widetilde{(a,s)} + \widetilde{(b,t)} &:= \widetilde{(at+bs, st)} \quad \text{und}\\
+	\widetilde{(a,s)} \cdot \widetilde{(b,t)} &:= \widetilde{(ab,st)}
+\end{align*}
+wohldefiniert ist und $(A \times S)/{\sim}$ zu einem kommutativen Ring mit $0 = \widetilde{(0,1)}$, $1 = \widetilde{(1,1)}$ machen.
+
+Wegen $A \cong \tilde A := \{\widetilde{(a,1)} \mid a \in A\} \subseteq (A \times S)/\sim$ reicht es zu zeigen, dass $\tilde S := \{\widetilde{(s,1)} \mid s \in S\} \subseteq \left((A \times S)/{\sim})\right)^\times$ und $(A \times S)/{\sim} = \tilde S^\mo \tilde A$. Sei hierzu $a \in A$, $s \in S$. Dann $\widetilde{(s,1)} \widetilde{(1,s)} = \widetilde{(s,s)} = \widetilde{(1,1)} = 1$, also $\widetilde{(s,1)}^\mo = \widetilde{(1,s)}$ und $\widetilde{(a,s)} = \widetilde{(s,1)}^\mo \widetilde{(a,1)} \in \tilde S^\mo \tilde A$. \qed
+
+\subsection{Satz} \label{fixed:2.3.7} Sei $A$ ein Unterring des kommutativen Ringes $B$, $S \subseteq A \cap B^\times$ multiplikativ und $B = S^\mo A$. Sei $C$ ein weiterer Ring und $\varphi : A \to C$ ein Homomorphismus. Genau dann gibt es einen Homomorphismus $\psi : S^\mo A \to C$ mit $\varphi = \psi|_A$, wenn $\varphi(S) \subseteq C^\times$. In diesem Fall ist $\psi$ eindeutig bestimmt, denn es gilt $\psi\left(\frac{a}{s}\right) = \frac{\psi(a)}{\psi(s)}$ für $a \in A, s \in S$.
+
+\proof Übung. \qed
+
+\subsection{Satz} \label{fixed:2.3.8} Sei $A$ ein Unterring des kommutativen Ringes $B$, $S \subseteq A \cap B^\times$ multiplikativ und $B = S^\mo A$. Dasselbe gelte mit $C$ statt $B$. Dann gibt es genau einen Isomorphismus $\psi: B \to C$ mit $\psi|_A = \id_A$.
+
+\proof Wende \ref{fixed:2.3.7} mit $\varphi: A \to C, a \mapsto a$ an, um zu sehen, dass $\id_A$ eine eindeutige Fotsetzung zu einem Homomorphismus $\psi : B \to C$ hat. Zu zeigen ist nur noch, dass $\psi$ ein Isomorphismus ist. Mit \ref{fixed:2.3.7} bekommt man aber auch einen Homomorphismus $\varphi: C \to B$ mit $\varphi|_A = \id_A$. Nun ist $\varphi \circ \psi: C \to C$ ein Homomorphismus mit $(\varphi \circ \psi)|_A = \id_A$ und daher $\varphi \circ \psi = \id_C$ nach \ref{fixed:2.3.7}. Ebenso $\psi \circ \varphi = \id_B$. Daher sind $\varphi$ und $\psi$ bijektiv. \qed
+
+\subsection{Definition} \label{fixed:2.3.9} Sei $A$ ein kommutativer Ring und $S \subseteq A$ eine multiplikative Menge, die keine Nullteiler von $A$ enthält. Den (nach \ref{fixed:2.3.6} existierenden und nach \ref{fixed:2.3.8} im Wesentlichen eindeutigen) Oberring $B$ von $A$ mit $S \subseteq B^\times$ und $B = S^\mo A$ nennt man Ring der Brüche\index{Ring!der Brüche} mit Zählern\index{Zähler} aus $A$ und Nennern\index{Nenner} aus $S$ (oder Lokalisierung\index{Lokalisierung|\see{Ring!der Brüche}} von $A$ nach $S$).
+
+Ist speziell $S$ die Menge aller Nichtnullteiler von $A$ (vgl.~\ref{fixed:2.3.2.c}), so nennt man $Q(A) = S^\mo A$ den totalen Quotientenring\index{Quotientenring!totaler} von $A$. Offenbar gilt: $Q(A)$ ist Körper $\iff$ $A$ ist Integritätsring. Ist $A$ ein Integritätsring, so nennt man den Körper $\qf(A) := Q(A) = (A\setminus\{0\})^\mo A$ daher auch den Quotientenkörper von $A$.
+
+\subsection{Bemerkung} Es folgt nun, dass Integritätsringe genau die Unterringe von Körpern sind.
+
+\subsection{Definition und Satz} (Körperadjunktion, vgl.~Ringadjunktion \ref{fixed:2.2.2})
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Ist $K$ ein Unterring eines Körpers $L$ und $K$ ein Körper, so nennt man
+		\begin{itemize}[label=$-$]
+			\item
+				$K$ einen Unterkörper\index{Körper!Unterkörper} von $L$,
+			\item
+				$L$ einen Oberkörper\index{Körper!Oberkörper} von $K$ und
+			\item
+				$L|K$ ("`über"') eine Körpererweiterung\index{Körpererweiterung}.
+		\end{itemize}
+	
+	\item
+		Sei $L|K$ eine Körpererweiterung. Sind $b_1,...,b_n \in L$, so ist $K(b1,...,b_n) := (K[b_1,...,b_n]\setminus\{0\})^\mo K[b_1,...,b_n] = \qf(K[b_1,...,b_n]) \subseteq L$ der kleinste Unterkörper\index{Körper!Unterkörper!kleinster} $F$ von $L$ mit $K \cup \{b_1,...,b_n\} \subseteq F$.
+	
+		Ist $E \subseteq L$, so ist $K(E) := (K[E]\setminus\{0\})^\mo K[E] = \qf(K[E]) \subseteq L$ der kleinste Unterkörper $F$ von $L$ mit $K \cup E \subseteq F$.
+\end{enumerate}
+
+\proof Trivial. \qed
+
+\subsection{Definition} (vgl.~\ref{fixed:2.3.3}) Sei $L|K$ eine Körpererweiterung.
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Sei $n \in \N_0$ und $b_1,...,b_n \in L$. Es heißt $L$ ein Körper der rationalen Funktionen\index{Körper!der rationalen Funktionen} über $K$ in $b_1,...,b_n$, wenn $L = K[b_1,...,b_n]$ und $b_1,...,b_n$ algebraisch unabhängig über $K$1 sind.
+		
+	\item
+		Sei $E \subseteq L$. Es heißt $L$ ein Körper von rationalen Funktionen\index{Körper!von rationalen Funktionen} über $K$ in $E$, wenn $L = K[E]$ und $E$ algebraisch unabhängig über $K$ ist.\footnote{An Korrektor: War mir hier bzgl.~der Klammern und der Namen (Index!) nicht ganz sicher.}
+\end{enumerate}
+
+\subsection{Proposition} \label{fixed:2.3.13} (vgl.~\ref{fixed:2.2.6}) Sei $L|K$ eine Körpererweiterung und $E \subseteq L$ mit $L = K[E]$. Sei $R$ ein Ring und seiden $\varphi, \psi: L \to R$ Homomorphismen mit $\varphi|_{K \cup E} = \psi|_{K \cup E}$. Dann $\varphi = \psi$.
+
+\proof $F := \{a \in L | \varphi(a) = \psi(a)\}$ ist ein Unterkörper von $L$, der $K \cup E$ enthält. Also $F = L$. \qed
+
+\subsection{Definition und Proposition} Seien $K$ und $F$ Körper.
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$K$ besitzt nur die trivialen Ideale $K$ und $\{0\}$.
+	\item
+		Ist $\varphi: K \to F$ ein (Ring-)Homomorphismus, so nennt man $\varphi$ auch einen Körperhomomorphismus\index{Homomorphismus!Körper-}\index{Homomorphismus!Körper-}. In diesem Fall gilt: Da $\varphi(1) = 1 \neq 0$ in $F$, liegt $1$ nicht im Ideal $\ker \varphi$ von $K$, womit $\ker \varphi = \{0\}$ nach (a). Es ist daher $\varphi : K \MAPmono F$ eine Einbettung und $\varphi : K \MAPiso \im \varphi$ ein Isomorphismus. Insbesondere ist das Bild von $\varphi$ nicht nur ein Unterring, sondern sogar ein Unterkörper von $F$. Beachte auch, dass gelten muss $\varphi\left(-\frac{1}{a}\right) = \frac{1}{\varphi(a)}$ für alle $a \in K^\times$.\footnote{An Korrektor: Gehört da wirklich ein Minus hin?}
+\end{enumerate}
+
+\subsection{Satz} (vgl.~\ref{fixed:2.2.9}) Seien $K(E)$ und $K(F)$ Körper von rationalen Funktionen über $K$ in $E$ bzw.~$F$. Sei $f: E \to F$ eine Bijektion. Dann gibt es genau einen Isomorphismus $\psi: K(E) \to K(F)$ mit $\psi|_K = \id_K$ und $\psi|_E = f$.
+
+\proof Zur Existenz: Nach \ref{fixed:2.2.9} gibt es einen Isomorphismus $\varphi: K[E] \to K[F]$ mit $\varphi|_K = \id_K$ und $\varphi_E = f$. Da $\varphi$ injektiv ist, gilt $\varphi(K[E]\setminus\{0\}) \subseteq K[F]\setminus\{0\} \subseteq K(F)^\times$ und \ref{fixed:2.3.7} liefert einen Homomorphismus $\psi : K(E) \to K(F)$ mit $\psi|_{K[E]} = \varphi$. Da $\psi$ ein Körperhomomorphismus ist, ist $\psi$ injektiv und $\psi$ ist ein Unterkörper von $K(F)$.\footnote{An Korrektor: Macht so keinen Sinn.} Es gilt aber $K \cup F \subseteq \im \varphi \subseteq \im \psi$, weswegen $\psi$ surjektiv ist.
+
+Die Eindeutigkeit folgt aus \ref{fixed:2.3.13}.
+
+\subsection{Notation und Sprechweise} (vgl.~\ref{fixed:2.2.10}) Sei $K$ ein Körper. Schreibt man $K(X_1,...X_n)$, so meint man dabei den (nach \ref{fixed:2.3.15} im Wesentlichen eindeutig bestimmen und nach \ref{fixed:2.3.5} und \ref{fixed:2.3.9} existierenden) Körper der rationalen Funktionen\index{Körper!der rationalen Funktionen!in Unbestimmten} in paarweise verschiedenen "`unbestimmten"' $X_1,...,X_n$.\footnote{An Korrektor: Index für "`Körper der rationalen Funktionen"' anpassen.}

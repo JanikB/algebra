@@ -1,0 +1,43 @@
+\subsection{Definition} Sei $A$ ein Unterring des kommutativen Ringes $B$.
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Sei $n \in \N_0$ und $b=(b_1,...,b_n) \in B^n$. Es heißen $b_1,...,b_n$ \emph{algebraisch unabhängig}\index{unabhängig!algebraisch}\index{algebraisch!unabhängig} über $A$ (in $B$), wenn für alle $d \in \N_0$ und alle $a_\alpha \in A (\alpha \in \N_0^n, |\alpha|\leq d)$ gilt:
+		\begin{equation*}
+			\sum_{\alpha \in \N_0^n, \atop |\alpha|<d} a_\alpha b^\alpha = 0 \implies \forall\alpha\in\N_0:(|\alpha|\leq d \implies a_\alpha = 0)
+		\end{equation*}
+		
+		Es heißt $B$ \emph{Polynomring}\index{Polynomring}\index{Ring!Polynom-} über $A$ in $b_1,...,b_n$, wenn $B=A[b_1,...,b_n]$ und $b_1,...,b_n$ algebraisch unabhängig über $A$ sind.
+		
+	\item
+		Sei $E \subseteq B$. Es heißt $E$ \emph{algebraisch unabhängig}\index{unabhängig!algebraisch}   über $A$ (in $B$), wenn für alle $n\in\N_0$ alle paarweise verschiedenen Elemente $b_1,...,b_n \in E$ algebraisch unabhängig über $A$ sind.
+		
+		Es heißt $B$ \emph{Polynomring}\index{Ring!Polynom-} über $A$ in $E$, wenn $B=A[E]$ und $E$ algebraisch unabhängig über $A$ ist.
+\end{enumerate}
+
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Jeder kommutative Ring $A$ ist ein Polynomring über sich selbst in $\emptyset$.
+	\item
+		Der Nullring $\{0\}$ ist ein Polynomring über sich selbst in $0$.
+\end{enumerate}
+
+\subsection{Satz} Sei $A$ ein kommutativer Ring mit $0\neq1$. Sei $E$ eine Menge mit $A \cap E = \emptyset$. Dann gibt es einen Polynomring über $A$ in $E$.
+ 
+\proof Bezeichne $\N_0^{(E)}$ die Menge aller $\alpha: E \to \N_0$ mit endlichem Träger $supp(\alpha) = \{ e\in E \mid \alpha(e) \neq 0 \}$. Mache die abelsche Gruppe $A^{\N_0^{(E)}}$ zu einem kommutativen Ring mit der "`Faltung"' $\ast$ als Multiplikation, welche gegeben ist durch 
+\begin{align*}
+	  (f \ast g)(\gamma):= \sum_{\alpha,\beta\in\N_0^{(E)}, \atop \alpha+\beta=\gamma} f(\alpha)g(\beta) && \left(f,g\in A^{\N_0^{(E)}}, \gamma \in \N_0^{(E)}\right)
+\end{align*}
+(Es handelt sich um eine endliche Summe, da $supp(\gamma)$ endlich. Man sieht sofort $f \ast g = g \ast f$, $f \ast (g+h) = f \ast g + f \ast h$ und $1 \ast f = f$ für
+\begin{align*}
+	1 : \N_0^{(E)} & \to A \\
+	\alpha &\mapsto \begin{cases} 1, & \alpha = 0 \\ 0, & sonst \end{cases}
+\end{align*}
+und rechnet
+\begin{align*}
+	((f \ast g) \ast h)(\gamma) &= \sum_{\alpha+\beta=\gamma} (f \ast g)(\alpha)h(\beta)
+ 	= \sum_{\alpha+\beta=\gamma} \left( \sum_{\delta+\varepsilon=\alpha} f(\delta)g(\varepsilon) \right) h(\beta) \\
+ 	&= \sum_{\delta+\varepsilon+\beta=\gamma} f(\delta)g(\varepsilon)h(\beta)
+ 	= ... = (f \ast (g \ast h))(\gamma)
+\end{align*}
+für alle $f,g,h\in A^{\N_0^{(E)}}, \gamma \in\N_0^{(E)}$. \qed\footnote{Korrektur: Ist der Beweis vollständig? Hier fehlen noch 2.2.6, 2.2.7 und 2.2.8 aus dieser Vorlesung.}

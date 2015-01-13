@@ -1,0 +1,52 @@
+\subsection{Definition und Proposition} Sei $A$ ein kommutativer Ring und $S \subseteq A$ eine multiplikative Menge. Wenn $S$ Nullteiler enthält (das heißt, wenn es $s \in S$ und $a \in A$ gibt mit $sa=0$), dann können wir keinen Oberring $S^\mo A$ wie in \ref{fixed:2.3.6} konstruieren (siehe \ref{fixed:2.3.5}). In diesem Fall (und allgemein) setzten wir $I_S := \{a \in A \mid \exists s \in S : sa=0\}$. Es ist $I_S$ ein Ideal von $A$, das $S$ multiplikativ ist. Es ist dann $\bar S := \{\bar s \mid s \in S\} \subseteq \bar A := A/I_S$ multiplikativ und ohne Nullteiler. Man nennt dann den Oberring $\bar S^\mo \bar A$ von $\bar A = \bar{A/I_S}$ die Lokalisierung\index{Lokalisierung} von $A$ nach $S$, in Zeichen $A_S := \bar S^\mo \bar A$. Man hat einen Homomorphismus\footnote{An Korrektor: Wie sieht der aus? Habe ich mir nicht aufgeschrieben.} $\iota_S(S) \subseteq A_S^\times$ und $\ker \iota_S = I_S$. Oft schreibt man schlampig wieder $S^\mo A$ und $\frac{a}{s}$ ($a \in A, s \in S$) statt $\bar S^\mo \bar A$ und $\frac{\bar a}{\bar s}$ ($a \in A, s \in S$).
+
+\subsection{Satz} Sei $A$ ein kommutativer Ring und $S \subseteq A$ multiplikativ. Sei $B$ ein weiterer kommutativer Ring und $\varphi: A \to B$ ein Homomorphismus mit $\varphi(S) \subseteq B^\times$. Dann gibt es genau einen Homomorphismus $\psi: A_S \to B$ mit $\varphi = \psi \circ \iota_S$.
+
+\proof Übung. \qed
+
+\section{Primideale und maximale Ideale}
+
+\subsection{Wiederholung} \label{fixed:2.4.1} Sei $R$ ein kommutativer Ring. Ist $E \subseteq R$, so ist $(E) := \{\sum_{i=1}^n a_i b_i \mid n \in \N, a_i \in R, b_i \in E\}$ das kleinste Ideal von $R$, welches $E$ enthält und man nennt es das von $E$ (in $R$) erzeugte Ideal\index{Ideal!erzeugtes} \LAref{3.3.9, 3.3.10}. Für $b_1,...,b_n \in R$ schreibt man auch $(b_1,...,b_n) := ({b_1,...,b_n}) = \{\sum_{i=1}^n a_i b_i \mid a_i \in R\}$. Ideale der Form $(b)$ mit $b \in R$ nennt man auch Hauptideale\index{Hauptideal} \LAref{3.3.11}. Es heißt $R$ ein Hauptidealring\index{Hauptidealring}, wenn $R$ ein Integritätsring ist, in dem jedes Ideal ein Hauptideal ist. $\Z$ und $K[X]$ ($K$ ein Körper, $X$ eine Unbekannte) sind Hauptidealringe \LAref{3.3.13, 10.2.2} oder \cite[§ 2.2, § 2.4]{Bosch2004}.
+
+Ist $p \in R$, so heißt $p$ irreduzibel\index{irreduzibel} (in $R$), wenn
+$$p \not\in R^\times \quad \& \quad \forall a,b \in R : (p = ab \Rightarrow (a \in R^\times \text{ oder } b \in R^\times))$$
+und prim\index{prim} (in $R$), wenn
+$$p \not\in R^\times \quad \& \quad \forall a,b \in R: (p|ab \Rightarrow (p|a \text{ oder } p|b)).$$
+
+In einem Integritätsring ist jedes Primelement $\neq 0$ irreduzibel. Die Äquivalenzrelation $\eqhat$ auf $R$ ist definiert durch $a \eqhat b :\iff (a|b \text{ \& } b|a) \iff (a) = (b)$ ($a,b \in R$).
+
+Setze $\hat a := \overset{\eqhat}{a}$ für $a \in R$. Fixiere $\P_R \subseteq R$ mit $\P_R \to \{a \in R \mid a \text{ prim}, a \neq 0\}/\eqhat, p \to \hat p$ bijektiv. (Z.~B.~$\P_\Z = \P = \{2,3,5,7,11,13,...\}$ für $R = \Z$.) Bezeichne $\N_0^{(\P_R)}$ die Menge der Funktionen $\alpha: \P_R \to \N_0$ mit endlichem Träger\index{Träger}\index{supp@\textit{supp}} $\supp(\alpha) := \{p \in \P_R \mid \alpha(p) \neq 0\}$.
+
+Für jedes $\alpha \in \N_0^{\P_R}$ setze $\P_R^\alpha := \prod_{p \in \supp(\alpha)} p^{\alpha(p)}$. Man nennt $(c,\alpha) \in R \times \N_0^{(\P_R)}$ eine Primfaktorzerlegung\index{Primfaktorzerlegung} von $a \in R$, wenn $a = c \P_R^\alpha$. In Integritätsringen sind Primfaktorzerlegungen eindeutig. Es heißt $R$ ein faktorieller Ring\index{Ring!faktorieller}, wenn er ein Integritätsring ist, in dem jedes $a \in R\setminus\{0\}$ eine Primfaktorzerlegung besitzt. Jeder Hauptidealring ist faktoriell. In einem faktoriellen Ring ist jedes irreduzible Element prim. \cite[§ 2.4]{Bosch2004}
+
+\subsection{Definition} Sei $R$ ein kommutativer Ring. Ein Ideal $\p$ von $R$ heißt Primideal\index{Primideal} von $R$, wenn
+$$1 \not\in \p \quad \& \quad \forall a,b \in R : (ab \in \p \Rightarrow (a \in \p \text{ oder } b \in \p)).$$
+Ein Ideal $I$ von $R$ heißt echt\index{Ideal!echtes}, wenn $1 \not\in I$ (oder äquivalent $I \neq R$). Ein Ideal $\m$ von $R$ heißt maximales Ideal\index{Ideal!maximales} von $R$, wenn $\m$ ein maximales Element der durch Inklusion halbgeordneten Menge aller echten Ideale von $R$ ist.
+
+\subsection{Bemerkung} \label{fixed:2.4.3} Sei $R$ ein kommutativer Ring. Die in \ref{fixed:2.4.1} wiederholte Definition eines Primelements $p \in R$ kann man offensichtlich wie folgt lesen:
+$$1 \not\in (p) \quad \& \quad \forall a,b \in R : (ab \in (p) \Rightarrow (a \in (p) \text{ oder } b \in (p))).$$
+Es folgt für $p \in R$: $p$ Primelement $\iff$ $(p)$ ist Primideal
+
+\subsection{Satz} Sei $I$ ein Ideal des kommutativen Ringes $R$. Dann gilt
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$I$ Primideal $\iff$ $R/I$ Integritätsring \quad und
+	\item
+		$I$ maximales Ideal $\iff$ $R/I$ Körper
+\end{enumerate}
+
+\proof Übung. \qed
+
+\subsection{Korrolar} Jedes maximale Ideal eines kommutativen Rings ist ein Primideal.
+
+\proof Jeder Körper ist ein Integritätsring. \qed
+
+\subsection{Korrolar} Seien $A, B$ kommutative Ringe und $\varphi: A \to B$ ein Homomorphismus. Sei $\q$ ein Primideal von $B$. Dann ist $\p := \varphi^\mo(\q)$ ein Primideal von $A$.
+
+\proof $\psi: A \to B/\q, a \mapsto \bar{\varphi(a)}^\q$ ist Hintereinanderschaltung der Homomorphismen $A \stackrel{\varphi}{\longrightarrow} B \stackrel{b \to \bar b^\q}{\longrightarrow} B/\q$ und daher ein Homomorphismus. Nach Isomorphiesatz \ref{fixed:2.1.17} ist $A/\ker\psi \eqtilde \im \psi$. Es ist $\psi$ ein Unterring des Integritätsrings $B/\q$ und daher auch ein Integritätsring. Somit ist auch $A/\ker\psi$ ein Integritätsring, das heißt $\ker\psi$ ein Primideal von $A$. Es gilt $\ker\psi = \{a \in A \mid \psi(a) = 0\} = \left\{a \in A \mid \bar{\psi(a)}^\q = 0\right\} = \{a \in A \mid \varphi(a) \in \q\} = \varphi^\mo(\q) = \p$. \qed
+
+\subsection{Beispiel} Sei $K$ ein Körper. Im Polynomring $K[X,Y]$ ist $(X)$ ein Primideal, denn $K[X,Y]/(X) \eqtilde K[Y]$ ist ein Integritätsring (betrachte den Einsetzungshomomorphismus $K[X,Y] \to K[Y], p \mapsto p(0,Y)$ und wende den Isomorphiesatz \ref{fixed:2.1.17} an). Es ist $(X)$ kein maximales Ideal, denn $K[X,Y]/(X) \eqtilde K[Y]$ ist kein Körper. Dagegen ist $(X,Y)$ ein maximales Ideal von $K[X,Y]$, denn $K[X,Y]/(X,Y) \eqtilde K$ ist ein Körper (betrachte $K[X,Y] \to K, p \mapsto (0,0)$).
+
+\subsection{Satz} In einem Hauptidealring ist jedes Primideal $\neq \{0\}$ ein maximales Ideal.
+
+\proof Sei $R$ ein Hauptidealring und $\p \neq \{0\}$ ein Primideal in $R$. Sei $I$ ein Ideal von $R$ mir $p \subseteq I$. Zu zeigen: $I = \p$ oder $I = R$. Wähle $p,a \in R$ mit $\p = (p)$ und $I = (a)$. Die Bedingung $p \subseteq I$ bedeutet $(p) \subseteq (a)$, d.~h.~$p \in (a)$. Wähle $b \in R$ mit $p = ab$. Da $p$ gemäß \ref{fixed:2.4.3} prim ist und $R$ ein Integritätsring ist, ist $p$ irreduzibel in $R$. Also gilt $a \in R^\times$ oder $b \in R^\times$, also $I = (a) = R$ oder $I = (a) = (b^\mo p) \subseteq (p) = \p \subseteq I$. Also $I = R$ oder $I = \p$ wie gewünscht.

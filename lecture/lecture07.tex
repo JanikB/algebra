@@ -1,0 +1,131 @@
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Für jeden Vektorraum $V$ ist die Menge $\End(V)=\{f \mid f: V \to V ~ \text{linear}\}$\index{Endomorphismus!Vektorraum-} der Endomorphismen von $V$ mit der punktweisen Addition und der Hintereinanderschaltung als Multiplikation ein Ring mit Einheitengruppe $\End(V)^{\times} = \Aut(V)$. \LAref{§ 7.1}
+		
+	\item
+		Ist $R$ ein kommutativer Ring, so ist $R^{n \times n}$ ein  Ring mit $(R^{n \times n})^{\times} = \GL_n(R)$.
+\end{enumerate}
+
+\subsection{Definition} Seien $(A,+_A,\cdot_A)$ und $(B,+_B,\cdot_B)$ Ringe. Dann heißt $(A,+_A,\cdot_A)$ ein \emph{Unterring}\index{Unterring}\index{Ring!Unter-}  von $(B,+_B,\cdot_B)$, wenn $A \subseteq B$, $1_B \in A$, $\forall a,b \in A: a +_A b = a +_B b$, $\forall a,b \in A : a \cdot_A b = a \cdot_B b$.
+ 
+\subsection{Proposition}
+ Sei $(B,+,\cdot)$ ein Ring und $A$ eine Menge. Genau dann ist $A$ Trägermenge eines Unterrings von $(B,+,\cdot)$, wenn $\{0,1\} \subseteq A \subseteq B$, $\forall a,b \in A: a+b \in A, a \cdot b \in A$.
+ 
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Sei $R$ ein kommutativer Ring und  $n \in \mathbb{N}_0$. Dann sind $\Odm_R^{n \times n} = \{ A \in R^{n \times n} \mid A \text{ obere Dreiecksmatrix}\}$, $\Udm_R^{n \times n} = \{ A \in R^{n \times n} \mid A \text{ untere Dreiecksmatrix}\}$ und $\Udm_R^{n \times n} \cap \Odm_R^{n \times n} = \{ A \in R^{n \times n} \mid A \text{ Diagonalmatrix}\}$ Unterringe von $R^{n \times n}$ mit Einheitengruppen $(\Odm_R^{n \times n})^{\times} = \Odm_n(R)$, $(\Udm_R^{n \times n})^{\times} = \Udm_n(R)$ und $\left(\Udm_R^{n \times n} \cap \Odm_R^{n \times n}\right)^{\times} = \Odm_n(R) \cap \Udm_n(R)$.
+		
+	\item
+		$\{ 0 \}$ ist kein Unterring von $\mathbb{Z}$, denn $1 \notin \{0\}$.
+\end{enumerate}
+
+\subsection{Definition} Seien $A$ und $B$ Ringe. Dann heißt $f: A \to B$ ein \emph{(Ring-)Homomorphismus}\index{Homomorphismus!Ring-} von $A$ nach $B$, wenn
+\begin{align*}
+	&f \text{ ein Gruppenhomomorphismus von } A \text{ nach } B \text{ ist,}\\
+	&f(1)=1 \text{ und}\\
+	&\forall a,b \in A: f(ab) = f(a)f(b) \text{ gilt.}
+\end{align*}
+
+Ein Ringhomomorphismus heißt
+\begin{center}
+	\begin{tabular}{llll}
+		(Ring-) & (Einbettung oder) Mono-  & / Epi- & / Isomorphismus\\
+		wenn $f$ & injektiv & / surjektiv & / bijektiv ist, \\
+		in Zeichen & $f: A \MAPlongmono B$ & / $f: A \MAPlongepi B$ & / $f: A \MAPlongiso B$
+	\end{tabular}
+	\index{Einbettung!Ring-}
+	\index{Monomorphismus!Ring-}
+	\index{Epimorphismus!Ring-}
+	\index{Isomorphismus!Ring-}
+\end{center}
+
+\subsection{Bemerkung} Ist $f: A \to B$ ein Ringhomomorphismus, so ist $\im f$ ein Unterring von $B$, jedoch $\ker f$ in aller Regel kein Unterring von $A$. (Denn $1 \in \ker f \iff f(1)=0$ in $B$ $\iff 1=0$ in $B$. \lightning)
+ 
+\subsection{Bemerkung} Analog zu 1.2.7 und 1.2.8 führt man das \emph{direkte Produkt}\index{Direktes Produkt!von Ringen}\index{Produkt!direktes!von Ringen} von Ringen durch punktweise Addition und Multiplikation ein.
+ 
+\subsection{Definition und Proposition } \ALref{§ \ref{fixed:1.3}}, \LAref{§ 3.3} Sei $R$ ein Ring. Eine \emph{Kongruenzrelation}\index{Kongruenzrelation} auf $R$ ist eine Kongruenzrelation $\equiv$  auf der additiven Gruppe von $R$ \ALref{\ref{fixed:1.3.1}}, für die zusätzlich gilt:
+\begin{equation*}
+	\forall a,a',b,b'\in A:((a\equiv a' ~\&~ b\equiv b')\implies ab\equiv a'b')
+\end{equation*}
+Ist $\equiv$ ein Kongruenzrelation auf $R$, so wird $R/\equiv$ vermöge $\overline a + \overline b = \overline{a+b}$ und $\overline a \overline b = \overline{ab}$ $(a,b\in A)$ zu einem Ring (
+	\emph{"`Quotientenring"'}\index{Quotientenring}\index{Ring!Quotienten-}
+	\emph{"`Faktorring"'}\index{Faktorring},\index{Ring!Faktor-}
+	\emph{"`Restklassenring"'}\index{Restklassenring}\index{Ring!Restklassen-}
+).
+ 
+\subsection{Definition} Sei $R$ ein Ring. Eine Untergruppe $I$ der additiven Gruppe von $R$ heißt (beidseitiges) \emph{Ideal}\index{Ideal} von $R$, wenn:
+\begin{equation*}
+	\forall a\in R ~\forall b \in I : ab, ba \in I
+\end{equation*}
+ 
+\subsection{Satz} \ALref{\ref{fixed:1.3.9}} \LAref{§ 3.3} Sei $R$ ein Ring. Die Zuordnungen
+\begin{align*}
+	\equiv&\mapsto\overline0\\
+	\equiv_I&\mapsfrom I
+\end{align*}
+vermitteln eine Bijektion zwischen der Menge der Kongruenzrelationen auf $R$ und der Menge der Ideale von $R$.
+ 
+\proof Wenn wir zeigen, dass beide Abbildungen wohldefiniert sind, dann folgt mit \ref{fixed:1.3.9}, dass sie auch invers zueinander sind. Also zu zeigen:
+\begin{enumerate}[label=(\alph*)]
+	\item $\equiv$ ist Kongruenzrelation auf $R \implies \overline 0$ ist Ideal von $R$
+	\item $I$ ist Ideal von $R \implies \equiv_I$ ist Kongruenzrelation auf $R$
+\end{enumerate}
+
+{\bf Zu (a).} Sei $\equiv$ eine Kongruenzrelation auf $R$. Aus \ref{fixed:1.3.9} wissen wir schon, dass $\overline 0$ eine Untergruppe von $R$ ist. Noch zu zeigen: $\forall a\in A:\forall b\in\overline0:ab\in\overline0$. Sei also $a\in R$ und $b\in\overline 0$. Dann $ab \overset{b \equiv 0} \equiv a0 \overset{2.1.2(e)}\equiv0$, also $ab\in\overline0$ und $ba\equiv0a\equiv0$, also $ba\in\overline0$.
+ 
+{\bf Zu (b).} Sei $I$ eine Ideal von $R$. Aus \ref{fixed:1.3.9} wissen wir schon, dass $\equiv_I$ eine Kongruenzrelation der additiven Gruppe von $R$ ist. Noch zu zeigen: $\forall a,a',b,b'\in A:((a\equiv a' ~\&~ b\equiv b')\implies ab\equiv a'b')$. Seien also $a,a',b,b'\in R$ mit $a\equiv_Ia'$ und $b\equiv_Ib'$. Dann $ab-a'b'=a\underbrace{(b-b')}_{\in I} + b'\underbrace{(a-a')}_{\in I}\in I$, also $ab\equiv_Ia'b'$. \qed
+
+\subsection{Notation \& Sprechweise} Sei $I$ ein Ideal des Ringes $R$. Schreibe $R/I := R/\equiv_I ~:= \{ a+I \mid a \in R \}$. Man bezeichnet die Kongruenzklasse $\overline{a}^I = a+I$ von $a\in R$ auch als \emph{Restklasse}\index{Restklasse} von $a$ modulo $I$.
+ 
+\subsection{Bemerkung}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Sei $I$ ein Ideal des Ringes $R$. Dann ist die Abbildung $R \to R/I, a \mapsto \overline{a}^I$ nach Definition \ref{fixed:2.1.11} ein Ringhomomorphismus, genannt \emph{kanonischer Epimorphismus}\index{Epimorphismus!Ring-!kanonischer}.
+		
+	\item
+		Sei $f: A \to B$ ein Ringhomomorphismus. Dann ist $\ker f$ ein Ideal von $A$, aber $\im f$ im Allgemeinen kein Ideal von $B$. (Betrachte zum Beispiel $\Z \MAPmono \Q, a \mapsto a$.)
+\end{enumerate}
+
+\subsection{Homomorphiesatz für Ringe\index{Homomorphiesatz!für Ringe}}
+	Seien $A, B$ Ringe, $I$ ein Ideal von $A$ und $\varphi: A \to B$ ein Homomorphismus mit $I \subseteq ker \varphi$. Dann gibt es genau eine Abbildung $\overline{\varphi}: A/I \to B$ mit $\overline{\varphi}(\overline{a}^I)=\varphi(a)$ für alle $a \in A$. Diese Abbildung $\overline{\varphi}$ ist ein Homomorphismus. Weiter gilt $\overline{\varphi}$ injektiv $\iff I = \ker \varphi$ und $\overline{\varphi}$ surjektiv $\iff B = \im \varphi$.
+ 
+\proof Mit \ref{fixed:1.3.15} ist nur noch $\overline{\varphi}(1)=1$ und $\overline{\varphi}(\overline{a}^I \overline{b}^I) = \overline{\varphi}(\overline{a}^I) \overline{\varphi}(\overline{b}^I)$ f.a. $a,b\in A$ zz zeigen.
+
+Dies ist klar:
+\begin{align*}
+  &\overline{\varphi}(1)=\overline{\varphi}(\overline{1}^I)=\varphi(1)=1 \quad\text{und} \\
+  &\overline{\varphi}(\overline{a}^I \overline{b}^I)=\overline{\varphi}(\overline{ab}^I)=\varphi(ab)=\varphi(a)\varphi(b)=
+  \overline{\varphi}(\overline{a}^I)\overline{\varphi}(\overline{b}^I) \quad\text{für alle}~ a,b\in A. 
+\end{align*}
+\qed
+ 
+\subsection{Isomorphiesatz für Ringe\index{Isomorphiesatz! für Ringe}} Seien $A, B$ Ringe und $\varphi: A \to B$ ein Homomorphismus. Dann ist $\ker \varphi$ ein Ideal von $A$ und $\overline{\varphi}: A/\ker\varphi \to \im\varphi$ mit $\overline{\varphi}(\overline{a}^{\ker \varphi})=\varphi(a)$ für $a \in A$ ein Isomorphismus. Insbesondere $A/\ker\varphi \cong \im \varphi$.
+ 
+\proof Direkt aus \ref{fixed:2.1.16}. \qed
+ 
+\section{Polynomringe \small\LAref{§ 3.2}}
+
+\subsection{Notation} Sei $R$ ein kommutativer Ring, $n \in \N_0$, $a=(a_1,...,a_n)\in R^n$ und $\alpha=(\alpha_1,...,\alpha_n) \in \N_0^n$. Schreibe dann $|\alpha|=\alpha_1+...+\alpha_n$ und $a^\alpha:=a_1^{\alpha_1}+...+a_n^{\alpha_n}$.
+
+\subsection{Definition \& Satz} Sei $A$ ein Unterring des kommutativen Ringes $B$.
+\begin{itemize}
+	\item[(a)]
+		Sei $n \in \N_0$ und $b=(b_1,...,b_n)\in B^n$.
+		\begin{equation*}
+			 A[b] := A[b_1,...,b_n]
+			 :=\left\{\sum_{\alpha \in \N_0^n, \atop |\alpha|<d} a_\alpha b^\alpha \mid d \in \N_0, a_\alpha\in A\right\}
+		\end{equation*}
+		ist der kleinste Unterring $C$ von $B$ mit $A \cup \{b_1,...,b_n\} \subseteq C$.
+   
+	\item[(b)]
+		Sei $E \subseteq B$. $A[E] = \bigcup\{A[b] \mid n\in \N_0, b\in B^n\}$ ist der kleinste Unterring $C$ von $B$ mit $A \cup E \subseteq C$.
+\end{itemize}
+
+\proof Dass die angegeben Mengen jeweils in jedem solchen Unterring $C$ enthalten sind, ist klar. Zu zeigen ist dann nur noch, dass sie jeweils einen Unterring bilden. Dies ist einfach und wir zeigen exemplarisch nur, dass $A[b]$ aus (a) unter Multiplikation abgeschlossen ist. Seien also $d, d' \in \N_0, a_\alpha \in A$ für alle $\alpha \in \N_0^n$ mit $|\alpha| \leq d$ und $a_\alpha' \in A$ für alle $\alpha \in \N_0^n$ mit $|\alpha| \leq d'$. Dann
+\begin{equation*}
+	\left(\sum_{|\alpha| \leq d} a_\alpha b^\alpha\right)\left(\sum_{|\alpha| \leq d'} a_\alpha' b^\alpha\right)
+	= \sum_{|\gamma| \leq d+d'} \left(\sum_{\alpha+\beta=\gamma} a_\alpha a'^\beta\right) b^\gamma~\in A[b],
+\end{equation*}
+wobei man $a_\alpha:=0$ für $d<|\alpha| \leq d+d'$ und $a_\alpha':=0$ für $d'<|\alpha| \leq d+d'$ setzt. \qed

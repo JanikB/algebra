@@ -11,7 +11,7 @@
 		\item[(I)]
 			$\forall a \in G ~\exists g \in G : ab = 1 = ba$ \quad\quad \textit{"`inverse Elemente"'}
 	\end{itemize}
-"`$\cdot$"' heißt Gruppenmultiplikation\index{Gruppe!Multiplikation} oder Gruppenverknüpfung\index{Gruppe!Verknüpfung}. Gilt zusätzlich
+"`$\cdot$"' heißt Gruppenmultiplikation\index{Gruppe!-nmultiplikation} oder Gruppenverknüpfung\index{Gruppe!-nverknüpfung}. Gilt zusätzlich
 	\begin{itemize}
 		\item[(K)] $\forall a,b \in G : ab = ba$
 	\end{itemize}
@@ -58,7 +58,7 @@ so heißt $(G, \cdot)$ abelsch\index{Gruppe!abelsche} oder kommutativ\index{Grup
 			Für jeden Vektorraum $V$ ist die Menge $\Aut(V) := \{f \mid f : V \to V ~\text{linear und bijektiv}\}$\index{Automorphismus!Vektorraum-} mit der Hintereinanderschaltung als Multiplikation eine Gruppe.
 			
 		\item
-			Ist $R$ ein kommutativer Ring (z.\ B. $R = \Z$), so ist $\GL_n(R) := \{A \in R^\ntn \mid A ~\text{invertierbar}\} = \{ A \in R^\ntn \mid \det A \in R^\times \}$\index{Gruppe!General Linear} eine Gruppe.
+			Ist $R$ ein kommutativer Ring (z.\ B. $R = \Z$), so ist $\GL_n(R) := \{A \in R^\ntn \mid A ~\text{invertierbar}\} = \{ A \in R^\ntn \mid \det A \in R^\times \}$\index{General Linear Group} eine Gruppe.
 	\end{enumerate}
 	
 \subsection{Proposition} Sei $G$ eine Gruppe und $a,b \in G$.
@@ -83,9 +83,9 @@ so heißt $(G, \cdot)$ abelsch\index{Gruppe!abelsche} oder kommutativ\index{Grup
 		Aus $(ab)(b^\mo a^\mo) \GRPeqa a(b(b^\mo a^\mo)) \GRPeqa a((b b^\mo)a^\mo) \GRPeqi a(1a^\mo) \GRPeqn aa^\mo \GRPeqi 1$ folgt mit (a) $(ab)^\mo = b^\mo a^\mo$. \qed		
 \end{enumerate}
 
-\subsection{Definition} Seien $(G, \cdot_G)$ und $(H, \cdot_H)$ Gruppen. Dann heißt $(H, \cdot_H)$ eine Untergruppe\index{Gruppe!Untergruppe} von $(G, \cdot_G)$, wenn $H \subseteq G$ und $\forall a, b \in H : a \cdot_H b = a \cdot_G b$.
+\subsection{Definition} Seien $(G, \cdot_G)$ und $(H, \cdot_H)$ Gruppen. Dann heißt $(H, \cdot_H)$ eine Untergruppe\index{Gruppe!Unter-} von $(G, \cdot_G)$, wenn $H \subseteq G$ und $\forall a, b \in H : a \cdot_H b = a \cdot_G b$.
 
-\subsection{Proposition} Sei $(G, \cdot_G$ eine Gruppe und $H$ eine Menge. Dann ist $H$ genau dann Trägermenge\index{Trägermenge} einer Untergruppe von $(G, \cdot_g)$, wenn $H \subseteq G$, $1_S \in H$, $\forall a,b \in H : a \cdot_S b \in H$ und $\forall a \in H : a^ \mo \in H$.
+\subsection{Proposition} Sei $(G, \cdot_G$ eine Gruppe und $H$ eine Menge. Dann ist $H$ genau dann Trägermenge\index{Träger} einer Untergruppe von $(G, \cdot_g)$, wenn $H \subseteq G$, $1_S \in H$, $\forall a,b \in H : a \cdot_S b \in H$ und $\forall a \in H : a^ \mo \in H$.
 
 In diesem Fall gibt es genau eine Abbildung $\cdot_H : H \times H \to H$ derart, dass $(H, \cdot_H)$ eine Untergruppe von $(G, \cdot_G)$ ist. Es gilt dann $1_H = 1_G$, $\forall a,b \in H : a \cdot_H b = a \cdot_G b$ und $a^\mo = a^\mo$ (je in $G$ und $H$ gebildet).
 

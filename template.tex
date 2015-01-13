@@ -16,7 +16,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{mdframed}
-\usepackage[most]{tcolorbox}
+\usepackage{tcolorbox}
 \usepackage{titlesec}
 
 \usepackage{makeidx}
@@ -60,6 +60,15 @@
 % Sonstige
 \setlength{\parindent}{0pt}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand\numberfix[3]{
+	\setcounter{chapter}{#1}
+	\setcounter{section}{#2}
+	\setcounter{subsection}{#3}
+	
+	\rule{\textwidth}{1pt}
+	\texttt{Hier fehlt noch etwas ...}\\
+	\rule{\textwidth}{1pt}
+}
 
 %---------------------------Document--------------------------------------%
 
@@ -69,8 +78,9 @@
 
 \texttt{Die 'Anleitung' findet man unter \url{https://github.com/robsei/algebra/}. Dort gibt es unter 'lectures' auch Beispiele von bereits geTeXten Vorlesungen. Diese Datei an Robert Seidel (kanonische Uni-Mailadresse) schicken.}
 
-\texttt{Hinweis: Die Nummerierung der Sätze, Defnitionen usw. wird in diesem Dokument noch nicht stimmen. Das wird sich dann in der gesamten Version mit den zuvor einzufügenden Abschnitten korrigieren.}
+\texttt{Hinweis: Die Nummerierung der Sätze, Defnitionen usw. wird in diesem Dokument noch nicht stimmen. Das wird sich dann in der gesamten Version mit den zuvor einzufügenden Abschnitten korrigieren. Mit dem Befehl 'numberfix' kann man wie unten demonstriert den Kapitelzähler auf die letzte Nummer setzten, die vor dem neu einzufügenden Teil steht.}
 
+\numberfix{3}{1}{4}
 \subsection{Satz} \textsl{Hier gehts los ...}
 
 \end{document}

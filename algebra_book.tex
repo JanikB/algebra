@@ -28,10 +28,11 @@
 
 %----------------------------Titlesec-----------------------------------%
 
+% In the subsection, there is some automatic label{}ing.
 \usepackage{titlesec}
 \titleformat{\chapter}[block]{\normalfont\Huge\bfseries}{§~\thechapter}{.5em}{}[]
 \titleformat{\section}[block]{\hrule\bigskip\normalfont\Large\bfseries}{§~\thesection}{.5em}{}[\bigskip\hrule]
-\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{.5em}{}[]
+\titleformat{\subsection}[runin]{\normalfont\bfseries\label{fixed:\thesubsection}}{\thesubsection}{.5em}{}[]
 
 %----------------------------Definitions-------------------------------%
 
@@ -117,6 +118,7 @@
 
 % Benutze immer overline.
 \renewcommand\bar\overline
+\newcommand\barsmash[2]{\smash{\overline{#1}}\vphantom{#1}^{#2}}
 % Benutze immer widehat.
 \renewcommand\hat\widehat
 % Benutze immer varphi statt phi und varepslion statt epsilon.
@@ -125,6 +127,7 @@
 
 % Sonstige
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \renewcommand\i{\mathring\imath}
 \newcommand\numberfix[3]{
@@ -173,6 +176,8 @@
 
 \numberfix{3}{0}{0}
 \input{lecture/lecture19.tex}
+\input{lecture/lecture20.tex}
+\input{lecture/lecture21.tex}
 
 \nocite{*}
 \bibliographystyle{plaindin}

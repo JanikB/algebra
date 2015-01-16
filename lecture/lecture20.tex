@@ -1,0 +1,114 @@
+\subsection{Beispiel} $\irr_\Q(\sqrt 2) = X^2 - 2$, $\Q(\sqrt 2) = \Q[\sqrt 2] \eqtilde \Q[X] / (X^2 - 2)$ und $1, \sqrt 2$ bilden eine $\Q$-Basis von $\Q(\sqrt 2)$.
+
+\subsection{Satz} Sei $L|K$ eine Körpererweiterung und $a \in L$. Dann sind äquivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$a$ ist algebraisch über $K$
+		
+	\item
+		$K(a)|K$ ist endlich
+		
+	\item
+		$K[a] = K(a)$
+\end{enumerate}
+
+\proof ~\\
+\underline{(a) $\implies$ (b):} Nach \ref{fixed:4.1.10}.
+
+\underline{(b) $\implies$ (a):} Ist $d := [K(a) : K] < \infty$, so sind $1,a,...,a^d$ linear abhängig im $K$-Vektorraum $K(a)$
+
+\underline{(a) $\implies$ (c):} Nach \ref{fixed:4.1.10}
+
+\underline{(c) $\implies$ (a):} Ist $a$ nicht algebraisch über $K$, das heißt $a$ algebraisch unabhängig über $K$, so ist $K[a]$ ein Polynomring über $K$ und daher $K[a]^\times = K^\times \neq K[a] \setminus \{0\}$. Insbesondere ist dann $K[a]$ kein Körper und daher $K[a] \neq K(a)$. \qed
+
+\subsection{Korollar} Jede endliche Körpererweiterung ist algebraisch.
+
+\subsection{Proposition} Sei $L|K$ eine Körpererweiterung und $a_1,...,a_n \in L$ algebraisch über $K$ mit $L = K(a_1,...,a_n)$. Dann gilt $L = K[a_1,...,a_n]$ und $L|K$ ist endlich.
+
+\proof Für jedes $i \in \{1,...,n\}$ ist $a_i$ insbesondere algebraisch über $K(a_1,...,a_{i-1})$ und daher nach \ref{fixed:4.1.12} auch $K(a_1,...,a_i)$ über $K(a_1,...,a_{i-1})$ endlich.
+
+Es folgt mir \ref{fixed:4.1.5}, dass $L|K$ endlich ist und mit \ref{fixed:4.1.12}, dass $L = K(a_1) \cdots (a_n) = K[a_1] \cdots [a_n] = K[a_1,...,a_n]$. \qed
+
+\subsection{Definition} Eine Körpererweiterung $L|K$ heißt endlich erzeugt\index{Körpererweiterung!endlich erzeugte}, wenn es $n \in \N_0$ und $a_1,...,a_n \in L$ gibt mit $L = K(a_1,...,a_n)$.
+
+\subsection{Korollar} Sei $L|K$ eine Körpererweiterung. Dann ist $L|K$ endlich genau dann, wenn $L|K$ endlich erzeugt und algebraisch ist.
+
+\subsection{Satz (Transitivität der Algebraizität)} Sei $F$ ein Zwischenkörper von $L|K$ und $F|K$ algebraisch. Ist $a \in L$ algebraisch über $F$, so ist $a$ auch algebraisch über $K$.
+
+\proof Bezeichne die Koeffizienten von $\irr_F(a) \in F[X]$ mit $a_1,...,a_n \in F$. Dann ist $a$ sogar algebraisch über $K(a_1,...,a_n)$.
+
+Da die Körpererweiterung $K(a_1,...,a_n)|K$ endlich erzeugt und algebraisch ist, ist sie auch endlich. Da $K(a_1,...,a_n)(a) | K(a_1,...,a_n)$ auch endlich ist, ist nach \ref{fixed:4.1.5} $K(a_1,...,a_n,a) | K$ endlich und damit algebraisch. Insbesondere ist $a$ algebraisch über $K$. \qed
+
+\subsection{Korollar} Sei $F$ ein Zwischen Körper von $L|K$. Dann ist $L|K$ algebraisch genau dann, wenn $L|F$  beide algebraisch sind \ALref{vgl.~\ref{fixed:4.1.5}}.\footnote{Korrektur: Aussage wahrscheinlich so nicht richtig?}
+
+\subsection{Definition und Satz} Sei $L|K$ eine Körpererweiterung. Dann ist $\barsmash KL := \{a \in L \mid a \text{ algebraisch über } K\}$ ein Zwischenkörper von $L|K$, genannt der (relative) algebraische Abschluss\index{algebraischer Abschluss!relativer} von $K$ über $L$.
+
+\proof Zu zeigen sind:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$L \subseteq \barsmash KL$
+		
+	\item
+		$\forall a,b \in \barsmash KL : a+b, a \cdot b \in \barsmash KL$
+		
+	\item
+		$\forall a \in \barsmash KL \setminus \{0\} : \frac{1}{a} \in \barsmash KL$
+\end{enumerate}
+
+\textbf{Zu (a).} Ist klar.
+
+\textbf{Zu (b).} Sind $a,b \in \barsmash KL$, so ist $K(a,b)|K$ endlich nach \ref{fixed:4.1.14} und damit algebraisch und daher $a+b,a \cdot b \in K(a,b)$ algebraisch über $K$.
+
+\textbf{Zu (c).} Zeigt man genauso.
+
+\subsection{Beispiel} Den Körper $\barsmash \Q\C$ ($\barsmash \Q\R$) nennt man den Körper der algebraischen (reellen algebraischen) Zahlen\index{Körper!der (reellen) algebraischen Zahlen}.
+
+\section{Der algebraische Abschluss}
+
+\subsection{Satz von Kronecker} Sei $K$ ein Körper und $f \in K[X]$ irreduzibel und normiert. Dann gibt es eine endliche Körpererweiterung $L|K$ und ein $a \in L$ mit $L =  K(a)$ und $\irr_K(a) = f$.
+
+\proof [Nach \ref{fixed:4.1.10} ist klar, dass der gesuchte Körper, falls er existiert, isomorph zu {$K[X]/(f)$} sein muss.]
+
+$L := K[X]/(f)$ ist nach \ref{fixed:2.4.9} ein Körper. $K' := \{\bar b \mid b \in K\}$ ist ein zu $K$ isomorpher Unterkörper von $L$, da $K \MAPmono L,~b \mapsto \bar b$ und $f' := \phi(f) \in K'[X]$ mit $\phi : K[X] \MAPiso K'[X],~ b \mapsto \bar b~(b \in K),~X \mapsto X$.
+
+Es reicht, die Behauptung für $(K',f')$ statt $(K,f)$ zu zeigen. Setzt man $a := \bar X \in L$, so ist $f' \in K'[X]$ irreduzibel mit $f'(a) = f'(\bar X) = \bar f = 0$ und daher $f' = \irr_{K'}(a)$ nach \ref{fixed:4.1.9}. \qed
+
+\subsection{Korollar} Sei $K$ ein Körper und $f \in K[X] \setminus K$. Dann gibt es ein $L|K$ und ein $a \in L$ mit $[L:K] \leq \deg f$ und $f(a) = 0$.
+
+\proof Wähle $g \in K[X]$ irreduzibel mit $g|f$. Wende \ref{fixed:4.2.1} auf $g$ an.
+
+\subsection{Beispiel} \LAref{§ 4.2} Sei $K$ ein Körper, in dem es kein $a \in K$ gibt mit $a^2 = -1$. Dann ist $X^2+1$ irreduzibel in $K[X]$ und es gibt $L|K$ und $\i \in L$ mit $L = K(\i)$ und $\irr_K(\i) = X^2+1$.
+
+\subsection{Definition} Ein Körper $K$ heißt algebraisch abgeschlossen\index{algebraisch abgeschlossen}, wenn jedes Polynom aus $K[X] \setminus K$ eine Nullstelle in $K$ hat.
+
+\subsection{Bemerkung} Der noch zu beweisende Fundamentalsatz der Algebra besagt, dass $\C$ algebraisch abgeschlossen ist \LAref{4.2.12}.
+
+\subsection{Proposition} Sei $K$ ein Körper. Dann sind äquivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$K$ ist algebraisch abgeschlossen.
+		
+	\item
+		Jedes Polynom aus $K[X]\setminus\{0\}$ zerfällt \LAref{10.1.13}.
+		
+	\item
+		Jedes irreduzible Polynom aus $K[X]$ hat den Grad $1$.
+		
+	\item
+		$K$ ist der einzige über $K$ algebraische Oberkörper von $K$.
+		
+	\item
+		$K$ ist der einzige über $K$ endliche Oberkörper von $K$.
+\end{enumerate}
+
+\proof ~
+
+\underline{(a) $\implies$ (b):} Durch sukzessives Abspalten von Nullstellen \LAref{4.2.10}.
+
+\underline{(b) $\implies$ (c):} Klar.
+
+\underline{(c) $\implies$ (d):} Gelte (c). Sei $L|K$ algebraisch. Zu zeigen ist $L=K$. Sei $a \in L$. Zu zeigen ist $a \in K$. Nach (c) gilt $\irr_K(a) = X-c$ für ein $c \in K$. Dann aber $a - c = 0$, also $a = c \in K$.
+
+\underline{(d) $\implies$ (e):} Klar nach \ref{fixed:4.1.13}.
+
+\underline{(e) $\implies$ (a):} Gelte (e) und sei $f \in K[X] \setminus K$. Nach \ref{fixed:4.2.2} gibt es eine endliche Erweiterung $L$ von $K$ und ein $a \in L$ mit $f(a) = 0$. Nach (e) gilt $L=K$ und daher $a \in K$. \qed

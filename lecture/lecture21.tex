@@ -1,0 +1,37 @@
+\subsection{Lemma} Sei $K$ ein Körper. Dann gibt es eine algebraische Körpererweiterung $L|K$ derart, dass jedes Polynom aus $K[X] \setminus K$ in $L$ eine Nullstelle hat.
+
+\proof Wir treiben die Beweisidee des Satzes von Kronecker \ref{fixed:4.2.1} bis zum Exzess. Definiere \ALref{\ref{fixed:2.2.10}}
+$$I := \left( \{ f \in X_f \mid f \in K[X] \setminus K \} \right) \subseteq K[X_f \mid f \in K[X] \setminus K] =: A \footnote{Korrektur: Kann ich nicht lesen.}$$
+
+Wir zeigen $1 \ not\in I$ und nehmen hierzu an $1 \in I$. Wähle $f_1,...,f_n \in K[X] \setminus K$ und $g_1,...,g_n \in A$ mit
+\begin{equation}
+	1 = \sum_{i=1}^n g_if_iX_{f_i} \footnote{Korrektur: Kann ich nicht lesen.} \tag{$\ast$}
+\end{equation}
+alle $f_i$ (und damit $X_{f_i}$) paarweise verschieden. Durch $n$-faches Anwenden von \ref{fixed:4.2.2} erhält man sukzessive $L|K$ und $a_1,...,a_n \in L$ mit $f_i(a_i) = 0$ für $i \in \{1,...,n\}$. Durch Einsetzen von $a_i$ für $X_{f_i}$ und zum Beispiel $0$ für die übrigen Unbestimmten in ($\ast$), folgt $1=0$.
+
+Wegen $ 1 \not\in I$ gibt es nach \ref{fixed:2.4.14a} ein maximales Ideal $\m$ von $A$ mit $I \subseteq \m$. Dann ist $L := A/\m$ nach \ref{fixed:2.4.4b} ein Körper. Definiere $K' := \{ \bar b \mid b \in K \} \eqtilde K \subseteq L$. Es reicht zu zeigen:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$L|K'$ ist algebraisch.
+		
+	\item
+		Jedes Polynom aus $K'[X] \setminus K'$ hat in $L$ eine Nullstelle.
+\end{enumerate}
+
+\proof ~
+
+\textbf{Zu (a).} $L = K'[\bar X_f \mid f \in K[x] \setminus K] \subseteq \barsmash{K'}L$, denn für alle $f \in K[X] \setminus K$ ist $\bar X_f$ algebraisch über $K'$. In der Tat: Definiert man $f' \in K'[X] \setminus K'$ wie im Beweis von \ref{fixed:4.2.1}, so gilt $f'(\bar X_f) = \bar{f(X_f)} = 0$.
+
+\textbf{Zu (b).} Dies zeigt auch (b). \qed
+
+\subsection{Bemerkung} Man kann zeigen, dass in der Situation von \ref{fixed:4.2.6} der Körper $L$ automatisch algebraisch abgeschlossen ist \cite[A 3.7.11]{Bosch2004} \cite[A 8.8]{Lorenz2007}. Dies ist für uns aber noch zu schwierig, weshalb wir den Trick anwenden werden, das Lemma zu iterieren, um die Existenz eines algebraischen Abschlusses im folgenden Sinn zu zeigen:
+
+\subsection{Definition} \ALref{\ref{fixed:4.1.19}} Sei $L|K$ eine algebraische Körpererweiterung und $L$ algebraisch abgeschlossen. Dann heißt $L$ ein algebraischer Abschluss\index{algebraischer Abschluss} von $K$.
+
+\subsection{Satz} [Ernst Steinitz, geb.~1871, gest.~1928] Jeder Körper besitzt einen algebraischen Abschluss.
+
+\proof Sei $K$ ein Körper. Nach \ref{fixed:4.2.6} gibt es eine Folge $(K_n)_{n \in \N}$ von Körpern derart, dass $K_0 = K$ und für jedes $n \in \N_0$ $K_{n+1}|K_n$ eine algebraische Körpererweiterung ist mit der Eigenschaft, dass jedes Polynom aus $K_n[X]|K_n$ in $K_{n+1}$ eine Nullstelle hat. Definiere einen Körper $L$ durch $L := \bigcup \{K_n \mid n \in \N\}$ und $A +_L b = a +_{K_n} b$ sowie $a \cdot_L b = a \cdot_{K_n} b$ für alle $a,b \in L$ und $n \in \N$ mit $a,b \in K_n$.
+
+Es ist $L$ offensichtlich ein algebraischer Oberkörper von $K$ (denn jedes $K_n$ ist es nach \ref{fixed:4.1.18}). Schließlich ist $L$ algebraisch abgeschlossen. Ist nämlich $f \in L[X] \setminus L$, so gibt es $n \in \N_0$ mit $f \in K_n[X] \setminus K_n$ und $f$ hat in $K_{n+1} \subseteq L$ eine Nullstelle. \qed
+
+\subsection{Beispiel} Falls $\C$ algebraisch abgeschlossen ist (was wir später beweisen werden), so ist $\C$ ein algebraischer Abschluss von $\R$ und $\barsmash \Q\C$ \ALref{\ref{4.1.10}} ein algebraischer Abschluss von $\Q$.

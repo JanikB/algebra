@@ -25,6 +25,7 @@
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{tikz}
+\usetikzlibrary{matrix}
 
 %----------------------------Titlesec-----------------------------------%
 
@@ -119,6 +120,8 @@
 % Benutze immer overline.
 \renewcommand\bar\overline
 \newcommand\barsmash[2]{\smash{\overline{#1}}\vphantom{#1}^{#2}}
+% Bessere Tilde für Äquivalenzklassen.
+\newcommand\tildeidx[2]{\overset{\sim_{\scriptscriptstyle #2}}{#1\hphantom{\scriptscriptstyle #2}}}
 % Benutze immer widehat.
 \renewcommand\hat\widehat
 % Benutze immer varphi statt phi und varepslion statt epsilon.
@@ -178,6 +181,8 @@
 \input{lecture/lecture19.tex}
 \input{lecture/lecture20.tex}
 \input{lecture/lecture21.tex}
+\input{lecture/lecture22.tex}
+\input{lecture/lecture23.tex}
 
 \nocite{*}
 \bibliographystyle{plaindin}

@@ -1,0 +1,138 @@
+\subsection{Lemma} Seien $L|K$ und $L'|K'$ eine Körpererweiterung, $\phi : K \to K'$ ein Isomorphismus, $a \in L$ und $b \in L'$. Bezeichne $\tilde \phi : K[X] \to K'[X]$ den Isomorphismus mit $\tilde \phi|_K = \phi$ und $\tilde \phi(X) = X$. Dann sind äquivalent:\footnote{Hier könnte man noch die Grafiken einfügen.}
+
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Es gibt einen Isomorphismus $\psi : K(a) \to K'(b)$ mit $\psi|_K = \phi$ und $\psi(a) = b$.
+	
+	\item
+		\textit{Entweder} ist sowohl $a$ algebraisch über $K$ als auch $b$ über $K'$ mit $\tilde \phi (\irr_K(a)) = \irr_{K'}(b)$\footnote{Korrektur: Stand anders in der Vorlage.} \textit{oder} weder $a$ ist algebraisch über $K$ noch $b$ über $K'$.
+\end{enumerate}
+
+\proof ~
+
+\underline{(a) $\implies$ (b)} Ist einfach.
+
+\underline{(b) $\implies$ (a)} Seien zunächst weder $a$ algebraisch über $K$ noch $b$ über $K'$. Dann ist $K[a]$ (bzw. $K'[b]$) ein Polynomring über $K$ (bzw. $K'$) in der Unabhängigen $a$ (bzw. $b$). Daher findet man einen Isomorphismus $\psi_0 : K[a] \to K'[b]$ mit $\psi_0|_K = \phi$ und $\psi_0(a) = b$. Mit \ref{fixed:2.3.7} kann man $\psi_0$ zu einem Isomorphismus $\psi : K[a] \to K'(b)$ erweitern.
+
+Seien nun sowohl $a$ algebraisch über $K$ als auch $b$ über $K'$ und es gelte $\tilde \phi(\irr_K(a)) = \irr_{K'}(b)$. Wähle nun $\psi$ so, dass das folgende Diagramm kommutiert.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\matrix (m) [
+			matrix of math nodes,
+			row sep=4em,
+			column sep=6em
+		] {
+			K & K' \\
+			K[X] & K'[X] \\
+			K[X]/(\irr_K(a)) & K'[X]/(\irr_K(b)) \\
+			K[a] & K'[b] \\
+			K(a) & K(b) \\
+		};
+		% Vertikal, linke Spalte
+		\path
+		(m-1-1) edge[dotted] node [below, rotate=270] {$\subset$} (m-2-1);
+		\path
+		(m-2-1) edge[->>] node {} (m-3-1);
+		\path
+		(m-3-1) edge[->] node [above, rotate=90] {$\eqtilde$} (m-4-1);
+		\path
+		(m-4-1) edge[dotted] node [below, rotate=270] {$=$} (m-5-1);
+		% Vertikal, rechte Spalte
+		\path
+		(m-1-2) edge[dotted] node [above, rotate=270] {$\subset$} (m-2-2);
+		\path
+		(m-2-2) edge[->>] node {} (m-3-2);
+		\path
+		(m-3-2) edge[->] node [above, rotate=270] {$\eqtilde$} (m-4-2);
+		\path
+		(m-4-2) edge[dotted] node [above, rotate=270] {$=$} (m-5-2);
+		% Horizontal
+		\path
+		(m-1-1) edge[->] node [below] {$\phi$} node [above] {$\eqtilde$} (m-1-2);
+		\path
+		(m-2-1) edge[->] node [below] {$\tilde \phi$, $X \to X$} node [above] {$\eqtilde$} (m-2-2);
+		\path
+		(m-3-1) edge[->] node [below] {$\Phi$ \tiny aus \ref{fixed:2.1.17}} node [above] {$\eqtilde$} (m-3-2);
+		\path
+		(m-4-1) edge[dashed, ->] node [below] {$\psi$} node [above] {$\eqtilde$}(m-4-2);
+		% Horizontal klein (=Diagonal)
+		\path
+		(m-3-1) edge[draw=none] node {\tiny $\longleftarrow$ \ref{fixed:4.1.10} $\longrightarrow$ } (m-4-2);
+		\path
+		(m-4-1) edge[draw=none] node {\tiny $\longleftarrow$ \ref{fixed:4.1.10} $\longrightarrow$ } (m-5-2);
+	\end{tikzpicture}
+\end{figure}
+\qed
+
+\subsection{Definition} Seien $L|K$ und $L'|K$ Körpererweiterungen. Ein $K$-Homomorphismus (oder Homomorphismus über $K$) \index{Homomorphismus!über Körpererweiterungen} von $L$ nach $L'$ ist ein Homomorphismus $\phi :  \to L'$ mit $\phi|_K = \id_K$. Ein $K$-Isomorphismus (oder Isomorphismus über $K$) \index{Isomorphismus!über Körpererweiterungen} ist ein surjektiver (und damit bijektiver, siehe \ref{fixed:2.3.14b} $K$-Homomorphismus. Man nennt $L$ und $L'$ $K$-isomorph (oder isomorph über $K$) \index{isomorph!über Körpererweiterung}, in Zeichen $L \equiv_K L'$, wenn es einen $K$-Isomorphismus $L \to L'$ gibt.
+
+\subsection{Proposition} Seien $L|K$ und $L'|K$ Körpererweiterungen und $\phi : L \to L'$ ein Körperhomomorphismus. Dann ist $\phi$ ein $K$-Homomorphismus genau dann, wenn $\phi$ ein $K$-Vektorraumhomomorphismus ist.
+
+\proof Es gilt:
+\begin{align*}
+	\phi|K = \id_K
+	& \iff \forall a\in K : \phi(a) = a \\
+	& \iff \forall a\in K : \forall b\in L : \phi(a)\phi(b) = a \phi(b) \\
+	& \iff \forall a\in K : \forall b\in L : \phi(ab) = a \phi(b)
+\end{align*}
+\qed
+
+\subsection{Korollar} Seien $L|K$ und $L'|K$ Körpererweiterungen, $a \in L$ und $b \in L'$. Dann sind äquivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Es gibt einen $K$-Isomorphismus $\psi: K(a) \to K(b)$ mit $\psi(a) = b$.
+		
+	\item
+		\textit{Entweder} sind $a$ und $b$ beide algebraisch über $K$ mit demselben Minimalpolynom \textit{oder} weder $a$ noch $b$ sind algebraisch über $K$.
+\end{enumerate}
+
+\subsection{Satz} Sei $L|K$ eine Körpererweiterung, $C$ ein algebraisch abgeschlossener Körper und $\phi: K \to C$ ein Homomorphismus. Dann gibt es einen Homomorphismus $\psi: L \to C$ mit $\psi|_K = \phi$.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+	\matrix (m) [
+		matrix of math nodes,
+		row sep=3em,
+		column sep=3em
+	]{
+	  & C \\
+	L &   \\ 
+	  & K \\
+	};
+	\path (m-2-1) edge [dashed,->] (m-1-2);
+	\path (m-1-2) edge [<-] (m-3-2);
+	\path (m-3-2) edge (m-2-1);
+	\end{tikzpicture}
+\end{figure}
+
+\proof Auf $M := \{(F,\alpha) \mid \text{$F$ Zwischenkörper von $L|K$, $\alpha : F \to C$ Homomorphismus}\}$ definieren wir eine Halbordnung $\preceq$ durch $(F,\alpha) \preceq (F',\alpha') :\iff (F \subseteq F'~\&~\alpha'|_F = \alpha)$. Sei $K$ eine Kette in $M$. Ist $K = \emptyset$, so ist $(K, \phi)$ eine obere Schranke von $K$ in $(M,\preceq)$. Ist $K \neq \emptyset$, so sieht man leicht, dass  $(G,\beta)$, definiert durch $G := \bigcup\{F \mid \exists~\alpha : (F,\alpha) \in K\}$ und $\beta : G \to C,~a \mapsto \alpha(a)$ für $(F,\alpha) \in K$ mit $a \in F$, eine obere Schranke $(G,\beta)$ von $K$ in $(M,\preceq)$ definiert.
+
+Inesgesamt beseitzt also in $(M,\preceq)$ jede Kette eine obere Schranke. Nach dem Lemma von Zorn besitzt $(M,\preceq)$ ein maximales Element $(H,\gamma)$. Es günugt, $H=L$ zu zeigen. Sei hierzu $a \in L$. Zu zeigen, dass $a \in H$. Bezeichne $\tilde \gamma : H[X] \to (\gamma(H))[X]$ den Homomorphismus mir $\tilde \gamma|_H = \gamma$ und $\tilde \gamma(X)=X$. Da $\tilde \gamma$ eine Isomorphismus ist, ist mit $p := \irr_H(a)$ auch $q := \tilde \gamma(\irr_K(a)) \in (\gamma(H))[X]$ irreduzibel und normiert. Da $L$ algebraisch abgeschlossen ist, können wir $b \in C$ mit $q(b) = 0$ wählen. Nach \ref{fixed:4.2.12} gibt es also einen Homomorphimus $\delta:H(a) \to C$ mit $\delta|_H = \gamma$ und $\delta(a) = b$. Insbesondere $(H(a),\delta) \in M$ und $(H,\gamma) \preceq (H(a), \delta)$. Aus der Maximalität von $(H,\gamma)$ folgt $(H,\gamma) = (H(a),\delta)$, inesbesondere $H = H(a)$, das heißt $a \in H$, wie gewünscht. \qed
+
+\subsection{Korollar} Seien $L|K$ und $C|K$ Körpererweiterungen. Sei $L|K$ algebraisch und $C$ algebraisch abgeschlossen. Dann gibt es einen $K$-Homomorphismus $\phi:L \to C$, das heißt, $L$ ist $K$-isomorph zu einem Zwischenkörper von $L|K$.
+
+\subsection{Satz} [Ernst Steinitz] Je zwei algebraische Abschlüsse eines Körper $K$ sind zueinander $K$-isomorph. \index{Steinitz, Ernst}
+
+\proof Seien $L$ und $L'$ algebraische Abschlüsse von $K$. Dann ist $L$ $K$-isomorph zu einem Zwischenkörper $F$ von $L'|K$ nach \ref{fixed:4.2.17}. Mit $L$ ist auch $F$ algebraisch abgeschlossen. Da $L'|F$ algebraisch ist, folgt also aus \ref{fixed:4.2.6d}, dass $L'=F$. \qed
+
+\subsection{Sprechweise und Notation} Sei $K$ ein Körper. Da nach \ref{fixed:4.2.10} der algebraische Abschluss von $K$ existiert und er nach \ref{fixed:4.2.18} bis auf $K$-Isomorphie eindeutig ist, spricht man auch von \textit{dem} algebraischen Abschluss\index{algebraischer Abschluss} $\bar K$ von $K$. Die algebraischen Overkörper von $K$ sind bis auf $K$-Isomorphie nach \ref{fixed:4.2.17} genau die Zwischenkörper von $\bar K|K$.
+
+\section{Zerfällungskörper}
+
+\subsection{Sprechweise} Sei $K$ ein kommutativer Ring mit $0 \neq 1$, zum Beispiel ein Körper. Man sagt dann oft "`über $K$"', statt "`in $K[X]$"'. Beispiele: "`Sei $f$ ein Polynom über $K$"', statt: "`Sei $f \in K[X]$."' -- "`$f$ zerfällt über $K$"', statt: "`f zerfällt in $K[X]$."' -- "`$f$ ist irreduzibel über $K$"', statt: "`$f$ ist irreduzibel in $K[X]$."'
+
+\subsection{Definition} Sei $L|K$ eine Körpererweiterung und $A \subseteq K[X] \setminus \{0\}$. Dann heißt $L$ ein Zerfällungskörper\index{Zerfällungskörper} von $A$ über $K$, wenn jedes Polynom aus $A$ über $L$ zerfällt und $L = K(\{a \in L \mid \exists~f \in A : f(a)=0\})$.\footnote{Korrektur: Konnte Klammerung hier nicht richtig lesen.}
+
+\subsection{Bemerkung} Ist $L|K$ eine Körpererweiterung und $E \subseteq \barsmash KL$, so:
+\begin{align*}
+	K(E)
+	\overset{\ref{fixed:2.3.11}}{\underset{\ref{fixed:2.2.2}}{=}} & \bigcup\{K(a_1,...,a_n) \mid n \in \N_0,~a_i \in E\} \\
+	\overset{\ref{fixed:4.1.14}}{=} & \bigcup\{K[a_1,...,a_n] \mid n \in \N_0,~a_i \in E\} \\
+	\overset{\hphantom{\ref{fixed:4.1.14}}}{=} & K[E]
+\end{align*}
+Insbesondere kann man in \ref{fixed:4.3.2} Ring-, statt Körperadjunktion verwenden.
+
+\subsection{Definition und Proposition} Sei $L|K$ eine Körpererweiterung und $f \in K[X] \setminus \{0\}$. Dann heißt $L$ ein Zerfällungskörper\index{Zerfällungskörper} von $f$ über $K$, falls $L$ ein Zerfällungskörper von $\{f\}$ über $K$ ist. Genau dann ist also $L$ ein Zerfällungskörper von $f$ über $K$, wenn es $c \in K^\times$, $n \in \N_0$ und $a_1,...,a_n$ gibt, mit $f = c \prod_{i=1}^n (X-a_i)$ und $L = K(a_1,...,a_n)$ (oder $L=K[a_1,...,a_n]$).

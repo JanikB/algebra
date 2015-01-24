@@ -1,0 +1,124 @@
+\subsection{Beispiel}
+
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$\C$ ist ein Zerfällungskörper von $X^2+1$ über $\R$.
+		
+	\item
+		$\Q(\sqrt 2)$ ist ein Zerfällungskörper von $X^2-2$ über $\Q$.
+		
+	\item
+		$\Q(e^ {\frac{2 \pi i}{6}})$ ist ein Zerfällungskörper von $X^ 6-1$ über $\Q$.
+		
+	\item
+		$\Q\left(\sqrt[3]{2}, e^ {\frac{2 \pi \i}{3}}\right)$ ist ein Zerfällungskörper von $X^3 -2$, denn
+		$$X^ 3-2 = \left(X-\sqrt[3]{2}\right)\left(X-\sqrt[3]{2} \cdot e^{\frac{2 \pi \i}{3}}\right) \left(X-\sqrt[3]{2} \cdot e^{\frac{4 \pi \i}{3}}\right)$$
+		und $\Q\left(\sqrt[3]{2}, \sqrt[3]{2} \cdot e^{\frac{2 \pi \i}{3}}, \sqrt[3]{2} \cdot e^{\frac{4 \pi \i}{3}}\right) = \Q\left(\sqrt[3]{2}, e^{\frac{2 \pi \i}{3}}\right)$.
+\end{enumerate}
+
+\subsection{Bemerkung} Sei $L|K$ eine Körpererweiterung und $A \subseteq K[X] \setminus \{0\}$.
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Jeder Zerfällungskörper $L$ von $A$ über $K$ ist offensichtlich algebraisch über $K$, denn er entsteht aus $K$ durch Ajunktion von über $K$ algebraischen Elementen und ist damit nach \ref{fixed:4.1.19} ist $\barsmash KL$ enthalten und damit gleich $\barsmash KL$. Ist zusätzlich $A$ endlich, ist ist nach \ref{fixed:4.1.16} $L|K$ sogar endlich.
+		
+	\item
+		Zerfällt jedes Polynom aus $A$ über $L$, so gibt es offensichtlich genau einen Zwischenkörper $F$ von $L|K$, der ein Zerfällungskörper von $A$ über $K$ ist, nämlich $F = K(\{a \in L \mid \exists~f \in A : f(a)=0\})$.
+\end{enumerate}
+
+\subsection{Satz} Sei $K$ ein Körper und $A \subseteq K[X] \setminus \{0\}$. Dann gibt es bis aus $K$-Isomorphie geanu einen Zerfällungskörper von $A$ über $K$.
+
+\proof ~
+
+\textit{Existenz:} Nehme $K(\{a \in \bar K \mid \exists~f \in A : f(a) = 0\})$ im nach \ref{fixed:4.2.10} existierenden algebraischen Abschluss $\bar K$ von $K$.
+
+\textit{Eindeutigkeit:} Seien $L$ und $L'$ Zerfällungskörper von $A$ über $K$. Zu zeigen ist $L \eqtilde_K L'$. Da $L$ und $L'$ über $K$ algebraisch sind, sind $\bar L$ und $\bar L'$ nach \ref{fixed:4.1.17} algebraische Abschlüsse von $K$ und daher nach \ref{fixed:4.2.18} $K$-isomorph. Wähle einen $K$-Isomorphismus $\phi : \bar L \to \bar L'$. Dann sind $\phi(L)$ und $L'$ beides Zwischenkörper $\bar L'|K$, die ein Zerfällungskörper von $A$ über $K$ sind. Nach \ref{fixed:4.3.6b} gilt $\phi(L) = L'$, weshalb $\phi$ einen $K$-Isomorphismus $L \to L'$ induziert. \qed
+
+\subsection{Definition} Sei $L|K$ eine Körpererweiterung. Ein Automorphismus\index{Automorphismus!über Körpererweiterungen} von $L|K$ (oder ein $K$-Automorphismus von $L$ über $K$) ist ein $K$-Isomorphismus von $L$ nach $L$ \ALref{\ref{fixed:4.2.13}}.
+
+Es bezeichne $\Aut(L|K) := \{ \phi \mid \text{$\phi$ ist Automorphismus von $L|K$} \}$ die Gruppe aller Automorphismen von $L|K$.
+
+\subsection{Definition} Sei $K$ ein Körper. Betrachte die natürliche Wirkung von $\Aut(\bar K|K)$ auf $\bar K$ und die dazugehörige Äquivalenzrelation $\sim_K$ auf $\bar K$, definiert durch $a \sim_K b :\iff \exists~\phi \in \Aut(\bar K|K) : \phi(a)=??$\footnote{Korrektur: Kann ich nicht lesen.} ($a,b \in \bar K$). Für $a,b \in \bar K$ nennt man $a$ und $b$ über $K$ zueinander konjugiert\index{konjugiert}, wenn $a \sim_K b$.
+
+\subsection{Proposition} Sei $L|K$ eine algebraische Körpererweiterung und $\phi:L \to L$ ein $K$-Homomorphismus. Dann ist $\phi \in \Aut(L|K)$.
+
+\proof Nach \ref{fixed:2.3.14b} ist $\phi$ injektiv. Also ist noch zu zeigen, dass $\phi$ surjektiv ist. Sei $b \in L$ und zeige also $\exists~a \in L : \phi(a) =b$. Wähle $p \in K[X] \setminus \{0\}$ mit $p(b) = 0$. Für die endliche Menge $A := \{a \in L \mid p(a) =0 \}$ gilt dann $\phi(A) \subseteq A$ und daher $\phi(A) =A$. Wegen $b \in A$ gibt es also $a \in A \subseteq L$ mit $\phi(a) = b$.
+
+\subsection{Proposition} Sei $K$ ein Körper und $a,b \in \bar K$. Dann gilt $a \sim_K b \iff \irr_K(a) = \irr_K(b)$.
+
+\proof "`$\Longrightarrow$"': Klar
+
+"`$\Longleftarrow$"': Nach \ref{fixed:4.2.15} gibt es einen $K$-Homomorphismus $\phi : K(a) \to \bar K$ mit $\phi(a) =b$, den wir nach \ref{fixed:4.2.16} fortsetzen zu einem $K$-Homomorphismus $\psi:\bar K \to \bar K$. Nach \ref{fixed:4.3.10} gilt $\psi \in \Aut(L|K)$.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+	\matrix (m) [
+		matrix of math nodes,
+		row sep=2em,
+		column sep=2em
+	]{
+	\bar K & \bar K \\
+	K(a) & \\ 
+	K & \\
+	};
+	\path (m-1-1) edge [->] node [above] {$\psi$} (m-1-2);
+	\path (m-2-1) edge [->] node [below] {$\phi$} (m-1-2);
+	\path (m-1-1) edge (m-2-1);
+	\path (m-2-1) edge (m-3-1);
+	
+	\path (m-1-1) edge [dotted, bend right = 50] node [left] {\footnotesize alg.} (m-3-1);
+	\end{tikzpicture}
+\end{figure}
+\qed
+
+\subsection{Definition} Eine Körpererweiterung $L|K$ heißt normal\index{Körpererweiterung!normale}, wenn $L$ ein Zerfällungskörper einer Menge $A \subseteq K[X] \setminus \{0\}$\footnote{Korrektur: Konnte ich nicht lesen.} über $K$ ist.
+
+\subsection{Beispiel} Jede Körpererweiterung $L|K$ vom Grad $2$ ist normal. Wählt man nämlich $a \in L \setminus K$, so ist $L = K(a)$ und $L$ der Zerfällungskörper von $\irr_K(a)$ über $K$, denn $\deg \irr_K(a)=2$.
+
+\subsection{Satz} Sei $L|K$ eine algebraische Körpererweiterung. Dann sind äquivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$L|K$ ist normal.
+		
+	\item
+		Jedes irreduzible Polynom aus $K[X]$ mit einer Nullstelle in $L$ zerfällt über $L$.
+		
+	\item
+		$L$ ist Vereinigung von Äquivalenzklassen von $\sim_K$.
+		
+	\item
+		Für jeden $K$-Homomorphismus $\phi: L \to \bar L$ gilt $\phi(L) = L$.
+		
+	\item
+		$\forall~\phi \in \Aut(\bar L|K) : \phi(L)=L$
+\end{enumerate}
+
+\proof ~
+
+\underline{(a) $\implies$ (d)} Sei $L$ Zerfällungskörper von $A \subseteq K[X] \setminus \{0\}$ und $\phi : L \to \bar L$. ein $K$-Homomorphismus. Mit $L$  ist auch der dazu $K$-isomorphe Körper $\phi(L)$ ein Zerfällungskörper von $A$ über $K$. Da beide Zwischenkörper von $\bar L|K$ sind, folgt aber dann $\phi(L) = L$ nach \ref{fixed:4.3.6b}.
+
+\underline{(d) $\implies$ (e)} Klar.
+
+\underline{(e) $\implies$ (c)} Gelte (e). Wir zeigen $L = \bigcup \left\{ \tildeidx aK \mid a \in \bar L,~\tildeidx aK \cap L \neq \emptyset \right\}$.
+\begin{itemize}
+	\item["`$\subseteq$"':]
+		Sei $a \in L$. Dann ist $a \in \tildeidx aK \cap L$, also $\tildeidx aK \cap L \neq \emptyset$ und $a \in \tildeidx aK$.
+		
+	\item["`$\supseteq$"':]
+		Sei $a \in \bar L$ mit $\tildeidx aK \cap L \neq \emptyset$. Zu zeigen ist $\tildeidx aK \subseteq L$. Sei ohne Einschränkung $a \in L$. Sei $b in \tildeidx aK$. Zu zeigen ist $b \in L$. Wegen $a \sim_K b$ gibt es $\phi \in \Aut(\bar L|K)$ mit $b = \phi(a) \in \phi(L) = L$.
+\end{itemize}
+
+\underline{(c) $\implies$ (b)} Gelte (c)und sei $p \in K[X]$ irreduzibel mit einer Nullstelle in $L$. Da nach \ref{fixed:4.3.11} alle Nullstellen von $p$ in $\bar L$ zueinander konjugiert sind, liegen diese alle in $L$ wegen (c).
+
+\underline{(b) $\implies$ (a)} Gelte (b) und setze $A := \{p \in K[X] \mid p \text{ irreduzibel},~\exists~a \in L : p(a) = 0\}$. Nach (b) zerfällt jedoch jedes Polynom aus $A$ über $L$. Da $L|K$ algebraisch ist, gilt $E := \{a \in L \mid \exists~p \in A : p(a)=0\} =L$, denn jedes Element von $L$ ist Nullstelle eines Minimalpolynoms über $K$ und daher natürlich $L = k(E)$.\footnote{Korrektur: Kann ich nicht lesen / ist mir nicht klar.}
+
+\subsection{Beispiel}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Nach dem Kriterium von Eisenstein \ref{fixed:2.6.3} sind $X^4-2$ und $X^2-2$ irreduzibel in $\Q[X]$ (und in $\Z[X]$). Daraus folgt $\irr_\Q(\sqrt[4]{2}) = X^4-2$ und $\irr_\Q(\sqrt 2) = X^2-2$, also $[\Q(\sqrt[4]{2}) : \Q] = 4$ und $[\Q(\sqrt 2) : \Q] = 2$. Somit sind $\Q(\sqrt[4]{2})|\Q(\sqrt 2)$ und $\Q(\sqrt2)|\Q$ beides Körpererweiterungen vom Grad $2$ und daher normal nach \ref{fixed:4.3.13}.
+		
+		Aber $\Q(\sqrt[4]{2})|\Q$ ist nicht normal, da das irreduzible Polynom $X^4-2 \in \Q[X]$ über $\Q(\sqrt[4]{2})$ nicht zerfällt, obwohl es eine Nullstelle hat. In der Tat: $\i\sqrt[4]{2}$ ist eine Nullstelle dieses Polynoms, welche nicht in $\Q(\sqrt[4]{2})$, ja nicht einmal in $\R$, liegt.
+		
+	\item
+		Für jeden Körper $K$ ist $\bar K$ über $K$ normal.
+\end{enumerate}

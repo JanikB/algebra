@@ -1,0 +1,60 @@
+\subsection{Notation} Sei $p \in \P$. Fixiere einen algebraischen Abschluss $\bar \F_p$ von $\F_p$ den nach \ref{fixed:4.3.6b} und \ref{fixed:4.4.14} eindeutig bestimmten Zwischenkörper von $\bar \F_p|\F_p$ mit genau $p^n$ Elementen.\footnote{Korrektur: Macht irgendwie keinen Sinn.}
+
+\subsection{Proposition}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$\bar \F_p = \bigcup\{\F_{p^n} \mid n \in \N\}$
+		
+	\item
+		$\forall~m,n \in \N : (\F_{p^m} \subseteq \F_{p^n} \iff m \mid n)$
+\end{enumerate}
+
+\proof ~
+
+\underline{zu (a):} Sei $a \in \bar \F_p$ und setze $n := [\F_p(a) : \F_p] < \infty$. Dann ist $\#F_p(a) = p^n$ und daher $a \in \F_p(a) = \F_{p^n}$.
+
+\underline{zu (b):} Seien $m,n \in \N$. Gilt $\F_{p^m} \subseteq \F_{p^n}$, so ist $\F_{p^n}$ ein $\F_{p^m}$-Vektorraum der Dimension $k := [\F_{p^n} : \F_{p^m}]$ und daher $p^n = (p^m)^k$, das heißt $n=mk$. Gilt umgekehrt $m \mid n$, das heißt $p^n = (p^m)^k$ für ein $k \in \N$, so ist jede Nullstelle von $X^{p^m} - X$ auch eine Nullstelle von $X^{p^n} - X$.
+
+\subsection{Lemma} Sei $G$ eine endliche Gruppe und $a,b \in G$. Gelte $ab = ba$ und $1 \in (\ord a, \ord b)$. Dann $\ord (ab) = \ord(a) \ord(b)$.
+
+\proof Setze $m := \ord a$ und $n := \ord b$. Zu zeigen ist $\ord(ab)=mn$. Wärte $s,t \in \Z$ mit $1 = sm+tn$. Ist $k \in \Z$ mit $(ab)^k = 1$, so gilt\footnote{Korrektur: Kann ich nicht lesen.}
+$$1 = ((ab)^k)^{sm} = (a^m)^{ks}(b^{sm})^k = (b^{??})^k = b^k$$
+und analog $1 = a^k$, woraus $m \mid k$ und $n \mid k$ folgt, das heißt $k \in (m) \cap (n) \overset{\ref{fixed:2.8.5}}{=} (m)(n) \overset{\ref{fixed:2.8.2}}{=} (mn)$. Schließlich $(ab)^m = (a^m)^n(b^n)^m = 1$. Somit $\ord(ab)=mn$. \qed
+
+\subsection{Satz} Endliche Untergruppen der multiplikativen Gruppe eines Körper sind zyklisch.
+
+\proof Sei $K$ ein Körper, $G \leq K^\times$ mit $d := \#G < \infty$ und schreibe $d = p_1^{\alpha_1} \cdots p_n^{\alpha_n}$ mit $n \in \N_0$, $p_1,...,p_n \in \P$ paarweise verschieden und $\alpha_1,...,\alpha_n \in \N$. Sei $i \in \{1,...,n\}$. Da das Polynom $X^\frac{d}{p_i} - 1$ höchstens $\frac{d}{p_i} < d$ Nullstellen hat, gibt es $a_i \in G$ mit $a_i^\frac{p}{d_i} \neq 1$. Setze $b_i := a^\frac{d}{p_i^{\alpha_i}} \in G$. Wegen $b_i^{p_i^{\alpha_i}} = a_i^d = 1$, da $\ord a_i \mid \#G=d$, gilt $\ord b_i \mid p_i^{\alpha_i}$. Setzt man schließlich $b := b_1,...,b_n$, so folgt mit \ref{fixed:4.4.18}, dass $\ord(b) = p_1^{\alpha_1} \cdots p_n^{\alpha_n} = d$, also $\langle b \rangle = G$. \qed
+
+\subsection{Korollar} Multiplikative Gruppen endlicher Körper sind zyklisch.
+
+\subsection{Satz} Sei $p \in \P$ und $n \in \N$. Dann gibt es ein irreduzibles Polynom vom Grad $n$ in $\F_p[X]$ und für jedes solche Polynom $f$ gilt $\F_{p^n} \eqtilde \F_p[X]/(f)$.
+
+\proof Wähle gemäß \ref{fixed:4.4.19} ein $a \in \F_{p^n}^\times$ mit $\langle a \rangle = \F_{p^n}^\times$. Dann gilt insbesondere $\F_p(a) = \F_{p^n}$. Dann ist $f := \irr_{\F_p}(a) \in \F_p[X]$ irreduzibel vom Grad $[\F_{p^n} : \F_p] = n$. Sei nun $f \in \F_p[X]/(f)$ nach \ref{fixed:2.4.9} ein Körper. Da $\bar 1, \bar X, ..., \bar X^{n-1}$ eine Basis des $\bar F_p$-Vektorraumes $\F_p[X]/(f)$ ist, gilt $\#\F_p[X]/(f) = p^n$ und daher $\F_p[X]/(f) \eqtilde \F_{p^n}$ nach \ref{fixed:4.4.15b}. \qed
+
+\section{Separable Körpererweiterungen}
+
+\subsection{Definition} Sei $K$ ein Körper. Ein Polynom $f \in K[X]$ heißt separabel\index{sparabel}\index{Polynom!separables}, wenn $f$ im algebraischen Abschluss $\bar K$ von $K$ keine mehrfachen Nullstellen hat.
+
+\subsection{Warnung} Sei $K$ ein Körper. Viele Autoren nennen ein Polynom $f \in K[X]$ auch dann separabel über $K$, wenn jeder irreduzible Teiler von $f$ in $K[X]$ in unserem Sinne separabel ist.
+
+\subsection{Proposition} Sei $K$ ein Körper und $f \in K[X]$. Dann gilt $f$ separabel $\iff \gcd_{K[X]}(f,f')=1 \iff 1 \in (t,t')_{K[X]} \iff \gcd_{\bar K[X]} (f,f')=1$.
+
+\proof Klar mit \ref{fixed:4.4.11}.
+
+\subsection{Korollar} Sei $K$ ein Körper und $f \in K[X]$ irreduzibel. Dann gilt $f$ separabel $\iff f' \neq 0$.
+
+\subsection{Korollar} Sei $K$ ein Körper der Charakteristik $p \in \P \cup \{0\}$ und $f \in K[X]$ irreduzibel. Dann gilt:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$p = 0 \implies f$ separabel
+		
+	\item
+		$p \in \P \implies (f \text{ separabel } \iff f \not\in K[X^p])$
+		
+	\item
+		Es gibt ein irreduzibles separables $g \in K[X]$ und ein $n \in N_0$ mit $f = g(X^{p^n})$. Hierbei sind $g$ und $n$ durch $f$ eindeutig bestimmt und für alle $a \in \bar K$ mit $f(a)=0$ gilt $\mu(a,f) = p^n$.
+\end{enumerate}
+
+\proof (a) und (b) direkt aus \ref{fixed:4.5.4}.
+
+(c) direkt aus (a), falls $p=0$. Dann $n=0$ und $g=f$. (c) durch iteriertes Anwenden von (b), falls $p \in \P$. (Ist $g = \prod_{i=1}^d (X-a_i)$ mit $a_i \in \bar K$, so $f = \prod_{i=1}^d (X^{p^n}-a_i) = \prod_{i=1}^d (X^{p^n} - b_i^{p^n} \overset{\ref{fixed:4.4.3}}{=} \prod_{i=1}^d (X-b_i)^{p^n})$, wobei man $b_i \in \bar K$ wählt mit $b_i^{p^n} - a_i = 0$.) \qed

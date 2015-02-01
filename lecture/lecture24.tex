@@ -1,0 +1,106 @@
+\section{Endliche Körper}
+
+\subsection{Definition} Ist $R$ ein Ring, so heißt die eindeutig bestimmte Zahl $n \in \N_0$, welche den Kern des eindeutig bestimmten Ringhomomorphismus' $\Z \to R$ als Ideal erzeugt, die Charakterisitk\index{Charakteristik} von $R$, in Zeichen $\chara R$.\footnote{$\phi: \Z \to R,~...,~-1 \mapsto -1,~0 \mapsto 0,~1 \mapsto 1,~2 \mapsto 2,~...$}
+
+\subsection{Bemerkung}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Ist $R$ ein Ring, so gibt es genau einen Homomorphismus $\Z/(\chara R) \to R$. Dieser ist eine Einbettung und sein Bild ist der kleinste Unterring von $R$.
+	
+	\item
+		ist $R$ ein Integritätsring, so gilt $\chara R \in \{0\} \cup \P$.
+		
+	\item
+		Ist $K$ ein Körper und $p := \chara K$, so hat man im Fall $p=0$ ($p \in \P$) genau einen Homomorphismus $\Q \to K$ \ALref{\ref{fixed:2.3.7}} ($\F_p = \Z/(p) \to K$)\index{F_p@$\F_p$}. Dessen Bild ist der kleinste Unterkörper von $K$, welchen man auch Primkörper von $K$ nennt. Jeder Körper enthält also einen zu $\Q$ oder $\F_p$ ($p \in \P$) isomorphen Unterkörper.
+\end{enumerate}
+
+\subsection{Proposition} Sei $R$ ein kommutativer Ring mit $p := \chara R \in \P$. Dann ist der Frobenius-Endomorphismus [Ferdinand Georg Frobenius, geb. 1849, gest. 1917] $\Phi_R : R \to R,~a \mapsto a^p$ ein Endomorphismus.
+
+\proof Strittig könnte nur sein, ob $(a+b)^ p = a^p + b^p$ für alle $a,b \in R$ gilt. Durch Ausmultiplizieren und Zusammenfassen der linken Seite erhält man $(a+b)^p = \sum_{k=0}^p \binom{p}{k} a^k b^{p-k}$, wobei $\binom{p}{k}$ das Bild des Binomialkoeffizienten\index{Binomialkoeffizient} $\binom{p}{k} = \frac{p!}{k!(p-k)!}$ unter $\Z \to R$ bezeichnet. Für $k \in \{1,...,p-1\}$ ist $p$ kein Teiler von $k!(p-k)!$, aber $k!(p-k)!$ ein Teiler von $p!$ und damit von $(p-1)!$. Es folgt, dass $\binom{p}{k} = p \frac{(p-1)!}{k!(p-k)!} \in (p)$ und daher $\binom{p}{k} = 0$ in $R$ für $k \in \{1,...,p-1\}$. \qed
+
+\subsection{Definition} Sei $K$ ein Körper, $f \in K[X]$ und $a \in K$. Dann heißt $\mu(a,f) := \sup \left\{n \in \N_0 \mid (X-a)^n \text{ teilt $f$ in $K[X]$}\right\} \in \N_0 \cup \{\infty\}$ die Vielfachheit\index{Vielfachheit} von $a$ in $f$.
+
+\subsection{Bemerkung} Sei $K$ ein Körper, $f \in K[X]$ und $a \in K$.
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$\mu(a,f) = \infty \iff f=0$
+		
+	\item
+		$\mu(a,f) \geq 1 \iff f(a) =0$
+		
+	\item
+		Die Definition stimmt überein mit der in \LAref{10.1.13} gegebenen Definition der Vielfachheit einer Nullstelle $a \in K$ eines Polynoms $f \in K[X]\setminus\{0\}$.
+		
+	\item
+		$\mu(a,f) = v_{X-a}(f)$, wobei $v_{X-a}$ die in \ref{fixed:2.5.3} definierte $(X-a)$-Bewertung auf $K(X) = \qf(K[X])$ bezeichne.
+\end{enumerate}
+
+\subsection{Konvention} Ist $R$ ein Ring und $n \in \Z$, so schreibt man oft $n$ und meint damit das Bild von $n$ unter dem eindeutig bestimmten Ringhomomorphismus $Z \to R$.
+
+\subsection{Definition} Sei $K$ ein Körper. Dan durch $1'=0$ und $(X^n)' = nX^{n-1}$ für $n \in \N$ gegebenen $K$-Vektorraumhomomorphismus $K[X] \to K[X],~f \mapsto f'$ nennt\footnote{Korrektur: Kann ich nicht lesen.} man formale Ableitung\index{Ableitung!formale} \LAref{6.3.2 \textit{f}}.
+
+\subsection{Proposition} Sei $K$ ein Körper. Für alle $f,g \in K[X]$ gilt:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$(fg)' = f'g + fg'$ ("`Produktregel"')\index{Produktregel}
+		
+	\item
+		$(f(g))' = (f'(g))g'$ ("`Kettenregel"')\index{Kettenregel}
+\end{enumerate}
+
+\proof ~
+
+\underline{zu (a):} Die Abbildung $b : K[X] \to K[X]$, $(f,g) \mapsto (fg)'-f'g-fg'$ ist bilinear. Daher reicht es zu zeigen, dass $b(X^m,X^n) = 0$ für alle $m,n \in \N$. Dies ist klar für $m=0$ oder $n=0$.\footnote{Korrektur: Kann ich nicht lesen.} Seien also $m,n \in \N$. Dann ist $b(X^m,X^n) = (m+n)X^{m+n-1} - mX^{m-1}X^n - X^mnX^{n-1} = 0$.
+
+\underline{zu(b):} Er reicht für $n \in \N$ zu zeigen, dass für alle $g \in K[X]$ gilt: $(g^n)' = (ng^{n-1})g'$, was wir durch Induktion nach $n \in \N$ machen: $n = 1$ ist klar, also $n \to n+1~(n \in \N)$: Sei $g \in K[X]$. Dann $(g^{n+1})' = (gg^n)' = g'g^n + g(g^n)' = g'g^n + gng^{n-1}g' = (n+1)g^ng'$. \qed
+
+\subsection{Proposition} Sei $K$ ein Körper, $p := \chara K$, $f \in K[X] \setminus \{0\}$ und $a \in K$. Dann gilt
+$$p \nmid \mu(a,f) \implies \mu(a,f') = \mu(a,f') = \mu(a,f)-1$$
+$$p \mid \mu(a,f) \implies \mu(a,f') = \mu(a,f') \geq \mu(a,f)$$
+[Beachte, dass für $p =0$ gilt: $p \nmid \mu(a,f) \iff \mu(a,f) \geq 1 \iff f(a)=0$ und $p \mid \mu(a,f) \iff \mu(a,f)=0 \iff f(a) \neq 0$.]
+
+\proof Setze $n := \mu(a,f)$ und schreibe $f = (X-a)^n g$ mit $g \in K[X]$. Dann gilt $g(a) \neq 0$. Ist $n=0$, so $p \mid n$ und es ist nichts zu zeigen. Sei also $n>0$. Dann:
+$$f' = (X-a)^n g' + n(X-a)^{n-1} g = (X-a)^{n-1} \underbrace{((X-a) g' + ng)}_{=:h}$$
+Gilt $p \mid n$, so $h = (X-a)g'$ und $f' = (X-a)^ng'$. Gilt $p \nmid n$, so $h(a) = ng(a) \neq 0$. \qed
+
+\subsection{Definition} Sei $K$ ein Körper, $f \in K[X]$ und $a \in K$. Dann heißt $a$ eine mehrfache Nullstelle\index{Nullstelle!mehrfache} von $f$, wenn $\mu(a,f) \geq 2$.
+
+\subsection{Proposition} Sei $K$ ein Körper, $f \in K[X]$ und $a \in K$. Dann ist $a$ eine mehrfache Nullstelle von $f$ genau dann, wenn $f(a) = f'(a) = 0$.
+
+\proof Gilt $\mu(a,f) \geq 2$, so $\mu(a,f') \geq 1$ nach \ref{fixed:4.4.9}. Gilt umgekehrt $f(a) = f'(a)=0$, so ist natürlich $\mu(a,f) \geq 1$. Wäre $\mu(a,f)=1$, so $\chara K \nmid \mu(a,f)$ und daher $\mu(a,f') = 0$ nach \ref{fixed:4.4.9} im Widerspruch zu $f'(a)=0$. \qed
+
+\subsection{Beispiel} Sei $p \in \P$ und $n \in \N$. Das Polynom $X^{p^n} - X \in \F_p[X]$ hat keine mehrfachen Nullstellen im algebraischen Abschluss $\bar \F_p$ von $\F_p$, denn $(X^{p^n} - X)' = p^n X^{p^n-1}-1 = -1$.
+
+\subsection{Bemerkung} Sei $K$ ein endlicher Körper. Dann gilt $p := \chara K \in \P$ und $K$ ist ein endlich-dimensionaler Vektorraum über seinem zu $\F_p$ isomorphen Primkörper. Es folgt $\#K = p^n$ für ein $n \in \N_{\geq 1}$.
+
+\subsection{Satz} Sei $p \in \P$, $K|\F_p$ eine Körpererweiterung und $n \in \N$. Dann sind äquivalent:
+\begin{enumerate}[label=(\alph*)]
+	\item
+		$\#K=p^n$
+		
+	\item
+		$K$ ist Zerfällungskörper von $X^{p^n} - X$ über $\F_p$.
+\end{enumerate}
+
+\proof ~
+
+\underline{(a) $\implies$ (b):} Gelte $\#K = p^n$. Dann $\# K^\times = p^n - 1$ und daher $a^{p^n-1}=1$ für alle $a \in K^\times$ nach \ref{fixed:1.3.21}. Es folgt $a^{p^n} = a$ für alle $a \in K$. Es folgt $X^{p^n}-X = \prod_{a \in K} (X-a)$. Wegen $K = \F_p(K)$\footnote{Korrektur: Stimmt das so?} folgt (b).
+
+\underline{(b) $\implies$ (a):} Gelte (b). Setzt man $F := \{a \in K \mid a^{p^n} - a=0 \}$, so besteht $F$ genau aus den Nullstellen von $X^{p^n}-X$ in $K$, woraus mit (b) und \ref{fixed:4.4.12} folgt $\#F = p^n$. Andererseits ist $F = \{a \in K \mid \Phi_K^n(a)=a\}$ ein Zwischenkörper von $K|\F_p$, denn $\Phi_K$ und damit $\Phi_K^n$ ist ein $\F_p$-Endomorphismus von $K$. Es folgt $K = \F_p(F) = F$. \qed
+
+\subsection{Korollar}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Ist $m \in \N$, so gibt es genau dann einen Körper $K$ mit $\#K=m$, wenn es $p \in \P$ und $n \in \N$ mit $m = p^n$ gibt.
+		
+	\item
+		Sind $K$ und $L$ endliche Körper, so $K \eqtilde L \iff \#K = \#L$.
+\end{enumerate}
+
+\proof ~
+
+\underline{zu (a):} Benutze \ref{fixed:4.4.13} und die Existenz von Zerfällungskörpern aus \ref{fixed:4.3.7}.
+
+\underline{zu (b):} Seien $K$ und $L$ endliche Körper mit $\#K = \#L$. Zu zeigen $K \eqtilde L$. Nach \ref{fixed:4.4.13} gibt es $p \in \P$ und $n \in \N$ mit $\#K = \#L = p^n$. Aus dem Satz von Lagrange \ref{fixed:1.3.19} folgt dann, dass $K$ und $L$ jeweils einen zu $\F_p$ isomorphen Primkörper besitzen.
+
+Ohne Einschränkung sei $\F_p$ sogar gleich dem Primkörper sowohl von $K$ also auch von $L$. Nach \ref{fixed:4.4.14} sind $K$ und $L$ dann beide ein Zerfällungskörper von $X^{p^n}-X$ über $\F_p$. Mit \ref{fixed:4.3.7} folgt $K \eqtilde L$.

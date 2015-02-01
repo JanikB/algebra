@@ -25,7 +25,7 @@
 \usepackage[hidelinks]{hyperref}
 
 \usepackage{tikz}
-\usetikzlibrary{matrix}
+\usetikzlibrary{matrix, chains}
 
 %----------------------------Titlesec-----------------------------------%
 
@@ -44,6 +44,7 @@
 \newcommand\R{\mathbb R}
 \newcommand\C{\mathbb C}
 \renewcommand\P{\mathbb P}
+\newcommand\F{\mathbb F}
 \newcommand\p{\mathfrak p}
 \newcommand\m{\mathfrak m}
 \newcommand\q{\mathfrak q}
@@ -74,8 +75,11 @@
 
 % Operatoren
 \DeclareMathOperator\Aut{Aut}
+\DeclareMathOperator\Inn{Inn}
 \DeclareMathOperator\End{End}
 \DeclareMathOperator\GL{GL}
+\DeclareMathOperator\SL{SL}
+\DeclareMathOperator\SO{SO}
 \DeclareMathOperator\sgn{sgn}
 \DeclareMathOperator\im{im}
 \DeclareMathOperator\spn{span}
@@ -83,15 +87,25 @@
 \DeclareMathOperator\id{id}
 \DeclareMathOperator\qf{qf}
 \DeclareMathOperator\supp{supp}
+\DeclareMathOperator\chara{char}
+\DeclareMathOperator\ord{ord}
 
 % Relationen
 \newcommand{\eqhat}{\mathrel{\widehat{=}}}
 \newcommand{\eqtilde}{\mathrel{\widetilde{=}}}
 
+% Äquivalenzklassen
+\newcommand{\eqsimleft}[1]{\mathrel{{}_#1\!\sim}}
+\newcommand{\eqsimright}[1]{\mathrel{\sim_#1}}
+\newcommand{\eqaccentleft}[2]{\overset{{}_#1\sim}{\phantom{{}_#1\!}#2}}
+\newcommand{\eqaccentright}[2]{\overset{\sim_#2}{#1\phantom{{}_#2}}}
+
 % Befehle zu Gruppen
 \newcommand\GRPeqn{\stackrel{(N)}{=}}
 \newcommand\GRPeqi{\stackrel{(I)}{=}}
 \newcommand\GRPeqa{\stackrel{(A)}{=}}
+\newcommand\normsub{\mathrel\triangleleft}
+\newcommand\normsup{\mathrel\triangleright}
 
 % Befehle zu Abbildungen
 \newcommand\MAPmono{\lhook\joinrel\rightarrow}
@@ -169,6 +183,9 @@
 
 \input{lecture/lecture01.tex}
 
+\numberfix{1}{3}{3}
+\input{lecture/lecture04.tex}
+
 \numberfix{2}{1}{3}
 \input{lecture/lecture07.tex}
 \input{lecture/lecture08.tex}
@@ -177,12 +194,15 @@
 \input{lecture/lecture10.tex}
 \input{lecture/lecture11.tex}
 
-\numberfix{3}{0}{0}
+\numberfix{3}{2}{0}
+\input{lecture/lecture18.tex}
 \input{lecture/lecture19.tex}
 \input{lecture/lecture20.tex}
 \input{lecture/lecture21.tex}
 \input{lecture/lecture22.tex}
 \input{lecture/lecture23.tex}
+\input{lecture/lecture24.tex}
+\input{lecture/lecture25.tex}
 
 \nocite{*}
 \bibliographystyle{plaindin}

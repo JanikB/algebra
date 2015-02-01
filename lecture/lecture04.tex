@@ -1,0 +1,102 @@
+\subsection{Definition} Sei $G$ eine Gruppe. Zu jedem $H \leq G$ definieren wir Äquivalenzrelationen $\sideset{_H}{}{\mathop\sim}$ und $\sim_H$ auf $G$ durch
+\begin{align*}
+	a \eqsimleft H b & \iff ab^{-1} \in H & (a,b \in G) \\
+	a \eqsimright H b & \iff a^{-1}b \in H & (a,b \in G)
+\end{align*}
+
+Die Äquivalenzklassen
+\begin{align*}
+	\eqaccentleft Ha &=\{b \in G \mid a \eqsimleft H b \} = \{b\in G \mid ab^{-1} \in H\} = \{ha \mid h\ in H\} =: Ha \\
+	\eqaccentright aH &= \{b \in G \mid a \eqsimright H b \} = \{b \in G \mid a^{-1}b \in H \} = \{ah \mid h \in H\} =: aH
+\end{align*}
+nennt man Rechts- bzw. Linksnebenklassen\index{Nebenklasse} von $H$ nach $a$ ($a \in G$).
+
+\subsection{Bemerkung}
+	Ist $\equiv$ eine Kongruenzrelation auf $G$, so gilt nach \ref{fixed:1.3.3} für $H:=\overline{1}$ die Gleichheit $(\equiv) = (\eqsimleft H) = (\eqsimright H)$.
+	
+\subsection{Definition} Sei $G$ eine Gruppe. Eine Untergruppe $N$ von $G$ heißt Normalteiler\index{Normalteiler} von $G$, in Zeichen $N \triangleleft G$, wenn $\eqsimleft H {=} \eqsimright H$.
+
+\subsection{Proposition} \label{fixed:1.3.7}
+Sei $G$ eine Gruppe und $H\leq G$. Dann sind äquivalent:
+\begin{enumerate}[label={\alph*)}]
+	\item $H\triangleleft G$
+	\item $\sideset{_H}{}{\mathop\sim}=\sim_H$
+	\item $\forall a \in G:Ha=aH$
+	\item $\forall a\in G: aHa^{-1} :=\{aha^{-1}\:| \: h \in H\}=H$
+	\item $\forall a\in G: aHa^{-1} \subseteq H$
+	\item $\sideset{_H}{}{\mathop\sim}$ ist eine Kongruenzrelation
+	\item  $\sim_H$ ist eine Kongruenzrelation
+	\item $H$ ist der Kern eines Gruppenhomomorphismus	
+\end{enumerate}		
+
+\proof Übung. \qed
+	
+\subsection{Notation und Proposition} Sei $G$ eine Gruppe und $N \triangleleft G$. Dann schreiben wir:
+\begin{align*}
+	(\equiv_N) &:= (\eqsimleft N) = (\eqsimright N) \\
+	G/N &:= G/\equiv_N {=} \{Na\:|\: a\in G\} =\{aN\:|\: a\in G\}
+\end{align*}
+Weiter bezeichnen wir die Kongruenzklasse $\bar{a}=Na=aN$ von $a \in G$ auch als Nebenklasse\index{Nebenklasse} von $N$ nach $a$.
+
+\subsection{Satz} Sei $G$ eine Gruppe. Die Zuordnungen
+\begin{align*}
+	\equiv & \mapsto \bar{1}\\
+	\equiv_N & \mathrel{\reflectbox{$\mapsto$}} N
+\end{align*}
+vermitteln eine Bijektion zwischen der Menge der Kongruenzrelationen auf $G$ und der Menge der Normalteiler von $G$.
+
+\proof Übung. \qed
+
+\subsection{Definition und Proposition}
+Sei $G$ eine Gruppe. Ein Isomorphismus $G \to G$ heißt Automorphismus\index{Automorphismus} von $G$. Bezüglich der Hintereinanderschaltung bilden die Automorphismen von $G$ eine Gruppe, die sogenannte Automorphismengruppe $\Aut(G)$\index{Automorphismus!-engruppe} von $G$. Die Konjugationen\index{Konjugation} $c_a : G \to G, b \mapsto aba^{-1}$ mit $a \in G$ sind offensichtlich Automorphismen von $G$, die sogenannten inneren Automorphismen\index{Automorphismus!innerer} von $G$. Sie bilden den Normalteiler $\Inn(G):= \{c_a \mid a \in G \}$ von $\Aut(G)$. Eine Untergruppe $N \leq G$ ist genau dann ein Normalteiler von $G$, wenn $f(N)=N$ für alle $f \in \Inn(G)$ gilt. Man nennt $N\leq G$ eine charakteristische Untergruppe\index{Untergruppe!charakteristische} von $G$, wenn $f(N)=N$ sogar für alle $f \in \Aut(G)$ gilt.
+
+\proof Zu zeigen:
+\begin{enumerate}[label={\alph*)}]
+	\item $\forall a \in G: c_a \in \Aut(G)$
+	\item $\Inn(G)\triangleleft \Aut(G)$	
+\end{enumerate}
+\textbf{Zu (a):} Übung.
+
+\textbf{Zu (b):} Sei $a \in G$ und $f \in \Aut(G)$. Zu zeigen: $fc_af^{-1} \in \Inn(G)$. Ist $b \in G$, so $(fc_af^{-1})(b)=f\left(af^{-1}(b)a^{-1}\right) = f(a)bf(a)^{-1}$. Daher $fc_af^{-1}=c_{f(a)} \in \Inn(G)$. \qed
+		
+\subsection{Beispiel}
+\begin{enumerate}[label={\alph*)}]
+	\item
+		Nicht jeder Normalteiler ist eine charakteristische Untergruppe. Ist zum Beispiel $G \neq \{1\}$ eine Gruppe, so ist $G\times \{1\} \normsub G\times G$, aber $G\times \{1\}$ ist keine charakteristische Untergruppe von G, denn $G \times G \to G \times G, (g,h) \mapsto (h,g)$ ist ein Automorphismus von $G\times G$.
+		
+	\item
+		Sei $n \in \N$, $n \geq 3$. Dann gilt $C_n \normsub D_n$. In der Tat: Sei $A \in D_n$ und $B \in C_n$. Zu zeigen: $ABA^{-1} \in C_n$. Dies ist klar, falls $A \in C_n$, denn $C_n$ ist abelsch. Sei nun $A \in D_n \backslash C_n$. Dann ändert die Spiegelung den Drehsinn und somit $ABA^{-1}=B^{-1} \in C_n$.
+		
+	\item
+		Als Kern des Gruppenhomomorphismus $\sgn : S_n \to \{-1,1\}$ ist $A_n$ ein  Normalteiler von $S_n$.
+		
+	\item Sei $R$ ein kommutativer Ring als Kern von $\det : \GL_n(R_n) \to R^{\times}$ ist $\SL_n(R) \normsub \GL_n(R)$.
+	
+	\item Ebenso $\SO_n \normsub \text{O}_n$.
+\end{enumerate}
+
+\subsection{Bemerkung} Wird eine Untergruppe einer Gruppe in einer Weise definiert, die offensichtlich nur auf die Gruppenstruktur Bezug nimmt, so ist nach \ref{fixed:1.2.6} klar, dass diese Untergruppe charakteristisch und insbesondere ein Normalteiler ist.
+	
+\subsection{Definition}	Sei $G$ eine Gruppe. Dann heißt
+$$Z(G):=\{a \in G \mid \forall b \in G: ab = ba\} \normsub G$$
+das Zentrum von $G$.
+
+\subsection{Bemerkung} Mit \ref{fixed:1.2.6} ist klar, dass $Z(G)$ sogar eine charakteristische Untergruppe der Gruppe $G$ ist. Insbesondere ist $Z(G) \normsub N$. Letzteres folgt auch mit \ref{fixed:1.3.7h}, denn $Z(G)$ ist der Kern des Gruppenhomomorphismus $G\to \Aut(G),~a \mapsto c_a$. (Das Bild von $Z(G)$ ist übrigens $\Inn(G)$.)
+
+\subsection{Homomorphiesatz für Gruppen} \LAref{§ 2.3} Seien $G$ und $H$ Gruppen, $N \normsub G$ und $f:G \to H$ ein Homomorphismus mit $N \subseteq \ker f$. Dann gibt es genau eine Abbildung $\bar{f} : G/N \to H$ mit $\bar{f}\left(\bar{a}^N\right) = f(a)$ für alle $a \in G$. Die Abbildung $\bar{f}$ ist ein Homomorphismus. Weiter gilt:
+\begin{align*}
+	\bar{f} \text{ injektiv } & \iff N=\ker f\\
+	\bar{f} \text{ surjektiv } & \iff H=\im f
+\end{align*}	 
+
+\proof Eindeutigkeit von $\bar{f}$ ist klar.
+
+Zur Existenz von $\bar{f}$ (Wohldefiniertheit): Seien $a,b \in G$ mit $\bar{a}^N=\bar{b}^N$, d. h. $a \equiv_N b$. Zu zeigen: $f(a)=f(b)$. Wegen $ab^{-1} \in N \subseteq \ker f$ folgt $f(ab^{-1})=1$, also $f(a)f\left(b^{-1}\right)=f(a)f(b)^{-1}=1$. Es folgt $f(a)=f(b)$.\\
+
+$\bar{f}$ ist ein Homomorphismus: Seien $a,b \in G$. Zu zeigen: $\bar{f}\left(\bar{a}^N \bar{b}^N\right)=\bar{f}\left(\bar{a}^N\right) \bar{f}\left(\bar{b}^N\right)$.
+Es gilt $\bar{f}\left(\bar{a}^N \bar{b}^N\right) \overset{\ref{fixed:1.3.2}}{=} \bar{f}\left(\overline{ab}^N\right)=f(ab)=f(a)f(b)=\bar{f}\left(\bar{a}^N\right) \bar{f}\left(\bar{b}^N\right)$.
+\begin{align*}
+	\bar{f} \text{ injektiv } & \iff \ker \bar{f} =\{1\} \iff \{\bar{a}^N \mid f(a)=1\} = \{1\} \iff \forall a \in \ker f: \bar{a}^N=\bar{1}^N \\
+ 	& \iff \ker f \subseteq N \iff \ker f = N \\
+	\bar{f} \text{ surjektiv } & \iff H=\im \bar{f} \iff H=\im f
+\end{align*} \qed
